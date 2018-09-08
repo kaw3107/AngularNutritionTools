@@ -1,0 +1,13 @@
+      <div class="row form-content">
+        <div class="col-md-12">
+              <h1 class="form-title">Sign up</h1>
+              <form autocomplete="off" #f="ngForm" (ngSubmit)="onSubmit(f)">
+
+                <!-- <input type="text" name="username" placeholder="Username"/> -->
+                <input type="email" name="email" placeholder="E-mail" ngModel name="email"/>
+                <input type="password" name="password" autocomplete="new-password" placeholder="Password" ngModel name="password" />
+               <!-- <input type="password" name="password2" placeholder="Retype password" /> -->
+               <input type="submit" name="signup_submit" value="Sign me up" />
+                </form>
+            </div>
+            </div>

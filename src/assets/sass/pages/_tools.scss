@@ -1,0 +1,24 @@
+@import "src/assets/sass/components/_breadcrumbs.scss";
+@import "src/assets/sass/abstracts/_mixins.scss";
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import "src/assets/sass/abstracts/_mixins.scss";
+@import "src/assets/sass/abstracts/_variables.scss";
+
+
+.tools-wrapper-row1{
+  padding-top: 3rem;
+  .tools-card {
+    max-width: 30rem;
+    .tools-card-title{
+      color: $secondaryColor;
+      font-size: 2em;
+
+    }
+
+
+  }
+}
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}

@@ -1,0 +1,33 @@
+.app-home-header {
+  height: 100vh;
+
+  .app-home-header-img{
+    height: 100%;
+    width: 100%;
+    background-image: url("src/assets/images/_bg1-home.jpg");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.8;
+  }
+}
+
+.home-content-wrapper{
+  padding-top:7rem !important;
+}
+
+.home-signup-wrapper{
+  padding-top:10rem !important;
+}
+
+.intro-text-wrapper{
+  padding-left: 3rem !important;
+  padding-top:5rem !important;
+  padding-bottom: 6rem !important;
+}
+  form{
+    font-size: 1.8rem;
+      width: 80%;
+      color: white!important;
+      width: 100%;
+  }
