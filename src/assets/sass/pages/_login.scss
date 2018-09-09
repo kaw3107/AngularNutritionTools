@@ -1,11 +1,18 @@
 @import "src/assets/sass/abstracts/_mixins.scss";
 @import "src/assets/sass/abstracts/_variables.scss";
 
+
 .signup-wrapper{
-    padding-top: 3rem;
+    background-image: url("src/assets/images/background1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 83vh;
+    padding:0!important;
+    margin: 0 !important;
     .signup-card {
       max-width: 100%;
       padding: 4rem;
+      margin-top: 3rem;
       .signup-card-title{
         color: $secondaryColor;
         font-size: 2.5em;
@@ -41,4 +48,7 @@
   .mat-card-actions{
     display: flex;
     justify-content: center;
+  }
+  .mat-button{
+    font-size: 1.7rem;
   }
