@@ -1,6 +1,7 @@
-import { NgModule }  from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { AuthService } from 'src/app/auth/auth.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { routing } from './../routers/tools-routing.module';
 import { MaterialModule } from './../material.module';
 import { NavigationMainComponent } from '../app-navigation/navigation-main/navigation-main.component';
@@ -12,7 +13,12 @@ import { ToolsModule } from '../tools/tools.module';
 
 
 @NgModule({
-  imports: [ CommonModule, routing, MaterialModule,],
+  imports: [
+    CommonModule,
+    routing,
+    MaterialModule,
+    ReactiveFormsModule,
+  ],
   exports : [
     CommonModule,
     FormsModule,
@@ -21,9 +27,8 @@ import { ToolsModule } from '../tools/tools.module';
     MacroCalculatorComponent,
     ToolsStartComponent,
     BMRCalculatorComponent,
-    
   ],
-  declarations: [ 
+  declarations: [
     NavigationMainComponent,
     CalorieCalculatorComponent,
     MacroCalculatorComponent,
@@ -31,5 +36,6 @@ import { ToolsModule } from '../tools/tools.module';
     BMRCalculatorComponent,
 
    ],
+   providers: [AuthService],
 })
 export class SharedModule { }

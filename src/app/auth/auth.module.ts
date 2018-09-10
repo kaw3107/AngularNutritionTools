@@ -5,6 +5,8 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { LoginComponent } from './login/login.component';
 import { ToolsModule } from '../tools/tools.module';
 import { SharedModule } from '../shared/shared.module';
+import { AuthService } from 'src/app/auth/auth.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavigationMainComponent } from '../app-navigation/navigation-main/navigation-main.component';
 
 
@@ -12,15 +14,17 @@ import { NavigationMainComponent } from '../app-navigation/navigation-main/navig
     imports: [
       MaterialModule,
       CommonModule,
-      SharedModule
-
-      
+      SharedModule,
+      FormsModule,
+      ReactiveFormsModule,
     ],
-    declarations:[
+    declarations: [
         SignUpComponent,
         LoginComponent,
         NavigationMainComponent
     ],
-    exports:[]
+    exports: [],
+
+    providers: [AuthService],
 })
-export class AuthModule{    }
+export class AuthModule { }
