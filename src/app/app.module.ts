@@ -28,6 +28,7 @@ import {CalorieCalculatorComponent} from './tools/calorie-calculator/calorie-cal
 import {MacroCalculatorComponent} from './tools/macro-calculator/macro-calculator.component';
 import {BMRCalculatorComponent} from './tools/bmr-calculator/bmr-calculator.component';
 import { NavigationMainComponent } from './app-navigation/navigation-main/navigation-main.component';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +40,7 @@ import { NavigationMainComponent } from './app-navigation/navigation-main/naviga
     LoginComponent,
     SingupFormComponent,
     NavigationHomeComponent,
+    UserDashboardComponent,
   ],
   imports: [
     // BrowserModule,
