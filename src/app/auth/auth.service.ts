@@ -21,7 +21,7 @@ export class AuthService {
         this.router.navigate(['/tools']);
       } else {
         this.authChange.next(false);
-        this.authChange.navigate(['/']);
+        this.router.navigate(['/']);
         this.isAuthenticated = false;
       }
     });

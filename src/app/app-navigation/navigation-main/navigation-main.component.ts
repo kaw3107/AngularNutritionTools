@@ -17,8 +17,7 @@ export class NavigationMainComponent implements OnInit, OnDestroy {
   navElementFive = String('sign out');
     constructor(private authService: AuthService) { }
     ngOnInit() {
-      this.authSubscription = this.authService.authChange
-      .subscribe(authStatus => {
+      this.authSubscription = this.authService.authChange.subscribe(authStatus => {
         this.isAuth = authStatus;
       });
     }
