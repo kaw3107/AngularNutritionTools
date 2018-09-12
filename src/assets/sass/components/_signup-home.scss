@@ -29,11 +29,12 @@ input[type="password"] {
   font-size: 1.7rem;
   transition: 0.2s ease;
   opacity: 1;
+  color: white;
 }
 
 input[type="text"]:focus,
 input[type="password"]:focus {
-  border-bottom: .2rem solid #16a085;
+  border-bottom: .2rem solid $secondaryColor;
   color:white;
   transition: 0.2s ease;
 }
@@ -42,7 +43,7 @@ input[type="submit"] {
   margin-top: 2.8rem;
   width: 12rem;
   height: 3.2rem;
-  background: #16a085;
+  background: $secondaryColor;
   border: none;
   border-radius: .2rem;
   color: #FFF;
