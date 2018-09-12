@@ -1,15 +1,36 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-navigation-home',
   templateUrl: './navigation-home.component.html',
   styleUrls: ['./navigation-home.component.scss']
 })
-export class NavigationHomeComponent implements OnInit {
+export class NavigationHomeComponent implements OnInit, OnDestroy {
+isAuth = false;
+authSubscription: Subscription;
+navElementOne = String('about us');
+navElementTwo = String('tools');
+navElementThree = String('register');
+navElementFour = String('signin');
+navElementFive = String('sign out');
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
+    this.authSubscription = this.authService.authChange
+    .subscribe(authStatus => {
+      this.isAuth = authStatus;
+    });
+  }
+
+  onLogout() {
+    this.authService.logout();
+  }
+
+  ngOnDestroy() {
+    this.authSubscription.unsubscribe();
   }
 
 }

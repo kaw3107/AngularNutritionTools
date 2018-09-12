@@ -13,6 +13,20 @@ export class AuthService {
 
   constructor(private router: Router, private afAuth: AngularFireAuth ) {}
 
+  initAuthListener() {
+    this.afAuth.authState.subscribe(user => {
+      if ( user ) {
+        this.isAuthenticated = true;
+        this.authChange.next(true);
+        this.router.navigate(['/tools']);
+      } else {
+        this.authChange.next(false);
+        this.authChange.navigate(['/']);
+        this.isAuthenticated = false;
+      }
+    });
+  }
+
   registerUser(authData: AuthData) {
     this.afAuth.auth.createUserWithEmailAndPassword(
       authData.email,
