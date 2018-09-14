@@ -1,3 +1,4 @@
+import { AuthGuard } from './auth/auth.guard';
 import { routing } from './routers/app-routing.module';
 
 import { AuthService } from 'src/app/auth/auth.service';
@@ -22,12 +23,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { SingupFormComponent } from './home/singup-form/singup-form.component';
 import { NavigationHomeComponent } from 'src/app/app-navigation/navigation-home/navigation-home.component';
 import { SharedModule } from './shared/shared.module';
-import { ToolsModule } from './tools/tools.module';
-import {ToolsStartComponent} from './tools/tools-start/tools-start.component';
-import {CalorieCalculatorComponent} from './tools/calorie-calculator/calorie-calculator.component';
-import {MacroCalculatorComponent} from './tools/macro-calculator/macro-calculator.component';
-import {BMRCalculatorComponent} from './tools/bmr-calculator/bmr-calculator.component';
-import { NavigationMainComponent } from './app-navigation/navigation-main/navigation-main.component';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +35,7 @@ import { NavigationMainComponent } from './app-navigation/navigation-main/naviga
     LoginComponent,
     SingupFormComponent,
     NavigationHomeComponent,
+    UserDashboardComponent,
   ],
   imports: [
     // BrowserModule,

@@ -4,12 +4,17 @@ import { CalorieCalculatorComponent } from './../tools/calorie-calculator/calori
 import { BMRCalculatorComponent } from 'src/app/tools/bmr-calculator/bmr-calculator.component';
 import { Routes, RouterModule } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
+import { AuthGuard } from './../auth/auth.guard';
 
 export const routes: Routes = [
-  { path: 'tools', component: ToolsStartComponent }, // default route of the module
-  { path: 'calories-calculator', component: CalorieCalculatorComponent },
-  { path: 'rmacro-calculator', component: MacroCalculatorComponent },
-  { path: 'bmr-calculator', component: BMRCalculatorComponent}
+  { path: 'tools', component: ToolsStartComponent, canActivate: [AuthGuard]}, // default route of the module
+  { path: 'calories-calculator', component: CalorieCalculatorComponent, canActivate: [AuthGuard] },
+  { path: 'rmacro-calculator', component: MacroCalculatorComponent, canActivate: [AuthGuard] },
+  { path: 'bmr-calculator', component: BMRCalculatorComponent, canActivate: [AuthGuard]}
+];
+
+export const appRoutingProviders: any[] = [
+  AuthGuard,
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forChild(routes);
