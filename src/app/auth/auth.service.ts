@@ -44,8 +44,8 @@ login(authData: AuthData) {
   this.afAuth.auth
     .signInWithEmailAndPassword(authData.email, authData.password)
     .then(result => {
-      console.log(result);
       this.authSuccessfully();
+      console.log(result && this.isAuth() && this.isAuthenticated);
     })
     .catch(error => {
       console.log(error);

@@ -1,3 +1,4 @@
+import { AuthGuard } from './../auth/auth.guard';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from 'src/app/home/home.component';
@@ -13,9 +14,13 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent},
   { path: 'blog', component: BlogComponent},
-  { path: 'tools',  loadChildren: 'src/app/tools/tools.module#ToolsModule' },
+  { path: 'tools',  loadChildren: 'src/app/tools/tools.module#ToolsModule', canActivate: [AuthGuard]},
   { path: 'auth/signup', component: SignUpComponent},
   { path: 'auth/login', component: LoginComponent},
+];
+
+export const appRoutingProviders: any[] = [
+  AuthGuard,
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(routes);

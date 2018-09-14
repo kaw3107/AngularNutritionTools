@@ -4,7 +4,7 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-content" aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" style="padding-bottom: 2.5rem; padding-top: 2.5rem; padding-left: 2.5rem;" href="#">
+      <a class="navbar-brand" style="padding-bottom: 2.5rem; padding-top: 2.5rem; padding-left: 2.5rem;" routerLink="/">
             <img src="src/assets/images/logo.png" width="150" height="50" class="d-inline-block align-top" alt="">
     </a>
 
@@ -17,19 +17,19 @@
     <li class="nav-item">
       <a class="nav-link" routerLink="/about">{{navElementOne | uppercase}}</a>
       </li>
-      <li *ngIf="isAuth" class="nav-item">
+      <li *ngIf="isAuthenticated()" class="nav-item">
       <a class="nav-link" routerLink="/tools">{{navElementTwo | uppercase}}</a>
       </li>
       <!--<li class="nav-item">
           <a class="nav-link" routerLink="/blog">Blog</a>
           </li>-->
-      <li *ngIf="!isAuth" class="nav-item">
+      <li *ngIf="!isAuthenticated()" class="nav-item">
       <a class="nav-link" routerLink="/auth/signup">{{navElementThree | uppercase}}</a>
       </li>
-      <li *ngIf="!isAuth" class="nav-item">
+      <li *ngIf="!isAuthenticated()" class="nav-item">
       <a class="nav-link" routerLink="/auth/login">{{navElementFour | uppercase}}</a>
       </li>
-      <li *ngIf="isAuth" class="nav-item">
+      <li *ngIf="isAuthenticated()" class="nav-item">
         <a class="nav-link" style="cursor: pointer" (click)="onLogout()">{{navElementFive | uppercase}}</a>
         </li>
       </ul>

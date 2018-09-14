@@ -21,6 +21,15 @@ export class NavigationMainComponent implements OnInit, OnDestroy {
         this.isAuth = authStatus;
       });
     }
+
+    isAuthenticated() {
+      if (this.authService.isAuth()) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
     onLogout() {
       this.authService.logout();
     }

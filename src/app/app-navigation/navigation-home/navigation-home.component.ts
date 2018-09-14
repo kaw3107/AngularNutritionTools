@@ -24,6 +24,14 @@ navElementFive = String('sign out');
     });
   }
 
+  isAuthenticated() {
+    if (this.authService.isAuth()) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   onLogout() {
     this.authService.logout();
   }

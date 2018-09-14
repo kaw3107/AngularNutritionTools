@@ -1,3 +1,4 @@
+import { AuthGuard } from './../auth/auth.guard';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AuthService } from 'src/app/auth/auth.service';
@@ -36,6 +37,6 @@ import { ToolsModule } from '../tools/tools.module';
     BMRCalculatorComponent,
 
    ],
-   providers: [AuthService],
+   providers: [AuthService, AuthGuard],
 })
 export class SharedModule { }
