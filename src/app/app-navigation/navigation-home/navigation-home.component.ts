@@ -10,6 +10,7 @@ import { AuthService } from 'src/app/auth/auth.service';
 export class NavigationHomeComponent implements OnInit, OnDestroy {
 isAuth = false;
 authSubscription: Subscription;
+
 navElementOne = String('about us');
 navElementTwo = String('tools');
 navElementThree = String('register');
