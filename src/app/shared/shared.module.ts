@@ -19,6 +19,7 @@ import { ToolsModule } from '../tools/tools.module';
     routing,
     MaterialModule,
     ReactiveFormsModule,
+    ToolsModule
   ],
   exports : [
     CommonModule,

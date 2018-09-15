@@ -2,9 +2,12 @@
 @import "src/assets/sass/components/_buttons.scss";
 @import "src/assets/sass/base/_base.scss";
 @import "src/assets/sass/base/_typography.scss";
+@import "src/assets/sass/base/animations.scss";
+
+
 
 .form-title {
-  margin: 0 0 2rem 0;
+  margin: 0 0 1.5rem 0;
   color: white;
   font-size: 2.8rem;
   font-weight: 700;
@@ -52,6 +55,7 @@ input[type="submit"] {
   transition: 0.1s ease;
   text-align: center;
   cursor: pointer;
+  animation-delay: 1s;
 }
 
 input[type="submit"]:hover,
