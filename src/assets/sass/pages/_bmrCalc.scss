@@ -7,18 +7,18 @@
   opacity: 0;
 }
 .tools-calc-wrapper{
-    background-image:url("src/assets/images/background1.jpg");
+    background-image:url("src/assets/images/background2.jpg");
     background-repeat: no-repeat;
     background-size: 30%;
     background-position: bottom right;
-    height: 83vh;
+    height: 73vh;
     padding:0!important;
     margin: 0 !important;
     .tools-calc-card {
       max-width: 100%;
       padding: 4rem;
       margin-top: 3rem;
-      animation-delay: .8s;
+      animation-delay: .5s;
       .tools-calc-card-title{
         color: $secondaryColor;
         font-size: 2.5em;

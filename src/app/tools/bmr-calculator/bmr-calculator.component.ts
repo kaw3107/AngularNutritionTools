@@ -31,12 +31,12 @@ export class BMRCalculatorComponent implements OnInit {
     this.ageVar = this.bmrForm.controls['age'].value;
     this.heightVar = this.bmrForm.controls['height'].value;
 
-    this.calcMacros();
+    this.calcBMR();
 
     console.log(this.bmrVar);
   }
 
-  calcMacros() {
+  calcBMR() {
 
     if(this.genderVar === 'm') {
       const weightMultiplier = 10;

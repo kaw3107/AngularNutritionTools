@@ -1,3 +1,74 @@
-<p>
-  macro-calculator works!
-</p>
+<section>
+    <div class="row justify-content-center tools-calc-wrapper">
+      <div class="col-md-5">
+        <div class="row">
+          <div class="col-md-12">
+              <mat-card class="tools-calc-card animate-pop-in">
+                  <mat-card-header>
+                    <mat-card-title class="tools-calc-card-title">BMR Calculator</mat-card-title>
+                  </mat-card-header>
+                  <mat-card-content>
+                    <form 
+                    class="bmr-calculator-form"
+                    autocomplete="off"
+                    [formGroup]="iifymForm"
+                     (ngSubmit)="onSubmit()">
+    
+                     <mat-radio-group #genderGroup formControlName="gender">
+                        <mat-radio-button type="radio"  value="m" radioGroup="genderGroup" >MALE</mat-radio-button>
+                        <mat-radio-button  type="radio" value="f" radioGroup="genderGroup" >FEMALE</mat-radio-button>
+                      </mat-radio-group>
+        
+                      <mat-form-field class="field-full-width">
+                        <input 
+                        matInput 
+                        type="number"
+                        placeholder="Age"
+                        formControlName="age">
+                        <span matSuffix>Years &nbsp;</span>
+                      </mat-form-field>
+        
+                      <mat-form-field class="field-full-width">
+                        <input 
+                        matInput 
+                        type="number"
+                        placeholder="weight"
+                        formControlName="weight">
+                        <span matSuffix>KG &nbsp;</span>
+                      </mat-form-field>
+    
+                      <mat-form-field class="field-full-width">
+                          <input 
+                          matInput 
+                          type="number"
+                          placeholder="Height"
+                          formControlName="height">
+                          <span matSuffix>CM &nbsp;</span>
+                        </mat-form-field>
+
+                        <mat-radio-group #goalGroup formControlName="goal">
+                            <mat-radio-button type="radio"  value="c" radioGroup="goalGroup" >CUTTING</mat-radio-button>
+                            <mat-radio-button  type="radio" value="b" radioGroup="goalGroup" >BULKING</mat-radio-button>
+                          </mat-radio-group>
+
+                          <mat-form-field>
+                              <mat-select #activityGroup formControlName="activities" placeholder="Activity Level">
+                                <mat-option selectGroup="#activityGroup" *ngFor="let activity of activities" [value]="activity.value">
+                                  {{activity.viewValue}}
+                                </mat-option>
+                              </mat-select>
+                            </mat-form-field>
+        
+                      <button mat-button color="primary" type="submit">Calculate</button>
+        
+                    </form>
+    
+                    <p *ngIf="macroVar !== 0" >{{macroVar}}</p>
+                    
+                  </mat-card-content>
+                </mat-card>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
