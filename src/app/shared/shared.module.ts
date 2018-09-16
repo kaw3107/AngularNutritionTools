@@ -1,3 +1,4 @@
+import { TdeeCalculatorComponent } from './../tools/tdee-calculator/tdee-calculator.component';
 import { AuthGuard } from './../auth/auth.guard';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -29,6 +30,7 @@ import { ToolsModule } from '../tools/tools.module';
     MacroCalculatorComponent,
     ToolsStartComponent,
     BMRCalculatorComponent,
+    TdeeCalculatorComponent
   ],
   declarations: [
     NavigationMainComponent,
@@ -36,7 +38,7 @@ import { ToolsModule } from '../tools/tools.module';
     MacroCalculatorComponent,
     ToolsStartComponent,
     BMRCalculatorComponent,
-
+    TdeeCalculatorComponent
    ],
    providers: [AuthService, AuthGuard],
 })

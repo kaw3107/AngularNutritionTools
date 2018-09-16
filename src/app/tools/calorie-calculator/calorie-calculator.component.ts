@@ -7,7 +7,7 @@ import { FormGroup, FormControl, NgForm } from '@angular/forms';
   styleUrls: ['./calorie-calculator.component.scss']
 })
 export class CalorieCalculatorComponent implements OnInit {
-
+  showResult = false;
   caloriesForm = new FormGroup({
     carbs: new FormControl(0),
     protein: new FormControl(0),
@@ -31,10 +31,24 @@ export class CalorieCalculatorComponent implements OnInit {
 
       this.calcMacros();
 
-      console.log(this.caloriesVar);
+      this.showResult = true;
     }
 
     calcMacros() {
      this.caloriesVar = this.carbVar * 4 + this.proteinVar * 4 + this.fatVar * 9;
+    }
+
+    reset() {
+      this.carbVar = 0;
+      this.fatVar = 0;
+      this.proteinVar = 0;
+      this.caloriesVar = 0;
+      this.caloriesForm.reset();
+      this.showResult = false;
+
+    }
+
+    onReturn() {
+      this.showResult = false;
     }
 }

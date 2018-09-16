@@ -7,6 +7,7 @@ import { FormGroup, FormControl, NgForm } from '@angular/forms';
   styleUrls: ['./bmr-calculator.component.scss']
 })
 export class BMRCalculatorComponent implements OnInit {
+  showResult = false;
   bmrForm = new FormGroup({
   weight: new FormControl(0),
   height: new FormControl(0),
@@ -32,26 +33,41 @@ export class BMRCalculatorComponent implements OnInit {
     this.heightVar = this.bmrForm.controls['height'].value;
 
     this.calcBMR();
-
-    console.log(this.bmrVar);
+    this.showResult = true;
   }
 
   calcBMR() {
 
-    if(this.genderVar === 'm') {
+    if (this.genderVar === 'm') {
       const weightMultiplier = 10;
       const heightMultiplier = 6.25;
       const ageMultiplier = 5;
       const maleAddVal = 5;
-      this.bmrVar = (weightMultiplier * this.weightVar) + (heightMultiplier * this.heightVar) - (ageMultiplier * this.ageVar) + maleAddVal;
-    } else if(this.genderVar === 'f') {
+      this.bmrVar = Math.round((weightMultiplier * this.weightVar) +
+            (heightMultiplier * this.heightVar) - (ageMultiplier * this.ageVar) + maleAddVal);
+    } else if (this.genderVar === 'f') {
       const weightMultiplier = 10;
       const heightMultiplier = 6.25;
       const ageMultiplier = 5;
       const femaleSubVal = 161;
-      this.bmrVar = (weightMultiplier * this.weightVar) + 
-          (heightMultiplier * this.heightVar) - (ageMultiplier * this.ageVar) - femaleSubVal;
+      this.bmrVar = Math.round((weightMultiplier * this.weightVar) +
+          (heightMultiplier * this.heightVar) - (ageMultiplier * this.ageVar) - femaleSubVal);
     }
+  }
+
+  reset() {
+    this.bmrVar = 0;
+    this.genderVar = '';
+    this.weightVar = 0;
+    this.ageVar = 0;
+    this.heightVar = 0;
+    this.bmrForm.reset();
+    this.showResult = false;
+
+  }
+
+  onReturn() {
+    this.showResult = false;
   }
 
 }
