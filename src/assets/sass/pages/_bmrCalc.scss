@@ -6,35 +6,39 @@
   animation: pop-in .6s cubic-bezier(0, 0.9, 0.3, 1.2) forwards;
   opacity: 0;
 }
-.signup-wrapper{
-    background-image:url("src/assets/images/background1.jpg");
+.tools-calc-wrapper{
+    background-image:url("src/assets/images/background2.jpg");
     background-repeat: no-repeat;
     background-size: 30%;
     background-position: bottom right;
-    height: 80vh;
+    height: 83vh;
     padding:0!important;
     margin: 0 !important;
-    .signup-card {
+    .tools-calc-card {
       max-width: 100%;
-      padding: 4rem;
+      padding: 5rem;
       margin-top: 3rem;
-      animation-delay: .8s;
-      .signup-card-title{
+      animation-delay: .5s;
+      .tools-calc-card-title{
         color: $secondaryColor;
         font-size: 2.5em;
 
       }
           
-      .example-form {
+      .bmr-calculator-form {
         min-width: 15rem;
         max-width: 50rem;
         width: 100%;
       }
       
-      .example-full-width {
+      .field-full-width {
         width: 100%;
         padding-bottom:1.5rem; 
         font-size: 1.8rem;
+      }
+
+      .mat-radio-button ~ .mat-radio-button {
+        padding-right: 16px;
       }
   
     }

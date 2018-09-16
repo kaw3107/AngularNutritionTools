@@ -1,3 +1,56 @@
-<p>
-  bmr-calculator works!
-</p>
+<section>
+  <div class="row justify-content-center tools-calc-wrapper">
+    <div class="col-sm-5">
+      <div class="row">
+        <div class="col-sm-12">
+          <mat-card class="tools-calc-card animate-pop-in">
+            <mat-card-header>
+              <mat-card-title class="tools-calc-card-title">BMR Calculator</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <div class="row">
+                <div class="col-sm-12">
+                  <form class="bmr-calculator-form" *ngIf="showResult === false" autocomplete="off" [formGroup]="bmrForm" (ngSubmit)="onSubmit()">
+
+                    <mat-radio-group #rGroup formControlName="gender">
+                      <mat-radio-button style="padding-right: 1.5rem; padding-bottom:2rem;" type="radio" value="m" radioGroup="rGroup">MALE</mat-radio-button>
+                      <mat-radio-button type="radio" value="f" radioGroup="rGroup">FEMALE</mat-radio-button>
+                    </mat-radio-group>
+
+                    <mat-form-field class="field-full-width">
+                      <input matInput type="number" placeholder="Age" formControlName="age">
+                      <span matSuffix>Years &nbsp;</span>
+                    </mat-form-field>
+
+                    <mat-form-field class="field-full-width">
+                      <input matInput type="number" placeholder="weight" formControlName="weight">
+                      <span matSuffix>KG &nbsp;</span>
+                    </mat-form-field>
+
+                    <mat-form-field class="field-full-width">
+                      <input matInput type="number" placeholder="Height" formControlName="height">
+                      <span matSuffix>CM &nbsp;</span>
+                    </mat-form-field>
+
+                    <button mat-button color="primary" type="submit">Calculate</button>
+
+                  </form>
+                  <div style="padding-left: 1.5rem;" *ngIf="showResult === true" class="row">
+                      <div class="col-sm-12">
+                      <h2>You're BMR Result:</h2>
+                       <p style="font-size: 1.6rem;">{{bmrVar}} Calories</p>
+                      </div>
+                  </div>
+                  <mat-action-row *ngIf="showResult === true" > 
+                      <button mat-button color="primary" (click)="onReturn()">Edit</button>
+                      <button mat-button color="warn" (click)="reset()">Reset</button>
+                    </mat-action-row>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

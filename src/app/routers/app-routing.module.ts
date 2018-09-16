@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent},
   { path: 'blog', component: BlogComponent},
-  { path: 'tools',  loadChildren: 'src/app/tools/tools.module#ToolsModule', canActivate: [AuthGuard]},
+  { path: 'tools',  loadChildren: 'src/app/tools/tools.module#ToolsModule'},
   { path: 'auth/signup', component: SignUpComponent},
   { path: 'auth/login', component: LoginComponent},
 ];
