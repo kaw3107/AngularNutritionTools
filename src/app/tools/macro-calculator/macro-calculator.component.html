@@ -11,6 +11,7 @@
                     <form 
                     class="bmr-calculator-form"
                     autocomplete="off"
+                    *ngIf="show !== false"
                     [formGroup]="iifymForm"
                      (ngSubmit)="onSubmit()">
     
@@ -32,7 +33,7 @@
                         <input 
                         matInput 
                         type="number"
-                        placeholder="weight"
+                        placeholder="Weight"
                         formControlName="weight">
                         <span matSuffix>KG &nbsp;</span>
                       </mat-form-field>
@@ -62,8 +63,88 @@
                       <button mat-button color="primary" type="submit">Calculate</button>
         
                     </form>
-    
-                    <p *ngIf="macroVar !== 0" >{{macroVar}}</p>
+
+                    <mat-accordion *ngIf="show === false" class="example-headers-align">
+                      <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+                        <mat-expansion-panel-header>
+                          <mat-panel-title>
+                            Aggressive Cut
+                          </mat-panel-title>
+                          <mat-panel-description>
+                            Extremely Low Calorie
+                          </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <div class="row">
+                          <div class="col-md-5">
+                          <p>Calories: </p>
+                          <p>Protein: </p>
+                          <p>Carbs: </p>
+                          <p>Fats: </p>
+                          <p *ngIf="goalSwitch === false"> Loss Per Week: </p>
+                          <p *ngIf="goalSwitch === true"> Gain Per Week: </p>
+                        </div>
+                        <div class="col-md-7">
+                            <p *ngIf="goalSwitch === false">{{kcalCut1}}</p>
+                            <p *ngIf="goalSwitch === false">{{proteinCut1}}</p>
+                            <p *ngIf="goalSwitch === false">{{carbCut1}}</p>
+                            <p *ngIf="goalSwitch === false">{{fatCut1}}</p>
+                            <p *ngIf="goalSwitch === false">{{lossPWCut1}}</p>
+
+                            <p *ngIf="goalSwitch === true">{{kcalBulk1}}</p>
+                            <p *ngIf="goalSwitch === true">{{proteinBulk1}}</p>
+                            <p *ngIf="goalSwitch === true">{{carbBulk1}}</p>
+                            <p *ngIf="goalSwitch === true">{{fatBulk1}}</p>
+                            <p *ngIf="goalSwitch === true">{{gainPWBulk1}}</p>
+                        </div>
+                        </div>
+                        <mat-action-row>
+                          <button mat-button color="primary" (click)="reset()">Reset</button>
+                          <button mat-button color="primary" (click)="nextStep()">Next</button>
+                        </mat-action-row>
+                      </mat-expansion-panel>
+                    
+                      <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+                        <mat-expansion-panel-header>
+                          <mat-panel-title>
+                            Suggested Cut
+                          </mat-panel-title>
+                          <mat-panel-description>
+                            Low Calorie
+                          </mat-panel-description>
+                        </mat-expansion-panel-header>
+                    
+                        <p>Calories: {{kcalCut2}}</p>
+                        <p>Protein: {{proteinCut2}}</p>
+                        <p>Carbs: {{carbCut2}}</p>
+                        <p>Fats: {{fatCut2}}</p>
+                        <p>Loss Per Week: {{lossPWCut2}}</p>
+                    
+                        <mat-action-row>
+                          <button mat-button color="warn" (click)="prevStep()">Previous</button>
+                          <button mat-button color="primary" (click)="nextStep()">Next</button>
+                        </mat-action-row>
+                      </mat-expansion-panel>
+                    
+                      <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+                        <mat-expansion-panel-header>
+                          <mat-panel-title>
+                            Maintain Weight
+                          </mat-panel-title>
+                          <mat-panel-description>
+                            Maintenance Calories
+                          </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <p>Calories: {{kcalMaintain}}</p>
+                        <p>Protein: {{proteinMaintain}}</p>
+                        <p>Carbs: {{carbMaintain}}</p>
+                        <p>Fats: {{fatMaintain}}</p>
+                        <mat-action-row>
+                          <button mat-button color="warn" (click)="prevStep()">Previous</button>
+                          <button mat-button color="primary" (click)="nextStep()">End</button>
+                        </mat-action-row>
+                      </mat-expansion-panel>
+                    
+                    </mat-accordion>
                     
                   </mat-card-content>
                 </mat-card>
