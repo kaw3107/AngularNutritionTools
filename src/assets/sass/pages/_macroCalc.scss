@@ -1,6 +1,7 @@
 @import "src/assets/sass/abstracts/_mixins.scss";
 @import "src/assets/sass/abstracts/_variables.scss";
 @import "src/assets/sass/base/animations.scss";
+@import "src/assets/sass/components/_material.scss";
 
 .animate-pop-in {
   animation: pop-in .6s cubic-bezier(0, 0.9, 0.3, 1.2) forwards;
@@ -36,45 +37,5 @@
         padding-bottom:1.5rem; 
         font-size: 1.8rem;
       }
-
-      .mat-radio-button ~ .mat-radio-button {
-        padding-right: 16px;
-      }
-  
     }
   }
-
-  .mat-card-header{
-    display: flex;
-    justify-content: center;
-    padding-bottom: 2.5rem;
-  }
-
-  .mat-card-content{
-    display: flex;
-    //justify-content: center;
-  }
-
-  .mat-card-actions{
-    display: flex;
-    justify-content: center;
-  }
-  .mat-button{
-    font-size: 1.7rem;
-    margin-top: 1rem;
-  }
-
-  .mat-radio-button ~ .mat-radio-button {
-    padding-right: 3rem;
-  }
-
-
-.example-headers-align .mat-expansion-panel-header-title, 
-.example-headers-align .mat-expansion-panel-header-description {
-  flex-basis: 0;
-}
-
-.example-headers-align .mat-expansion-panel-header-description {
-  justify-content: space-between;
-  max-width: 100%;
-}

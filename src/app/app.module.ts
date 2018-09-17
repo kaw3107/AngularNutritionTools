@@ -24,6 +24,9 @@ import { SingupFormComponent } from './home/singup-form/singup-form.component';
 import { NavigationHomeComponent } from 'src/app/app-navigation/navigation-home/navigation-home.component';
 import { SharedModule } from './shared/shared.module';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { UserProfileComponent } from './user-dashboard/user-profile/user-profile.component';
+import { UserAccountComponent } from './user-dashboard/user-account/user-account.component';
+import { UserGoalsComponent } from './user-dashboard/user-goals/user-goals.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +39,9 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
     SingupFormComponent,
     NavigationHomeComponent,
     UserDashboardComponent,
+    UserProfileComponent,
+    UserAccountComponent,
+    UserGoalsComponent,
   ],
   imports: [
     // BrowserModule,

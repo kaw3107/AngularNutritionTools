@@ -1,0 +1,50 @@
+<section>
+    <div class="row justify-content-center user-account-wrapper">
+      <div class="col-sm-5">
+        <div class="row">
+          <div class="col-sm-12">
+            <mat-card class="user-account-card animate-pop-in">
+              <mat-card-header>
+                <mat-card-title class="user-account-card-title">Account Details</mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <form class="user-account-form" autocomplete="off" [formGroup]="userAccountForm" (ngSubmit)="onSubmit()">
+  
+                      <mat-form-field class="field-full-width">
+                        <input matInput type="text" placeholder="Display Name" formControlName="displayName">
+                        <mat-icon matSuffix>mode_edit</mat-icon>
+                        <mat-error>Invalid Display Name</mat-error>
+                      </mat-form-field>
+  
+                      <mat-form-field class="field-full-width">
+                        <input matInput type="email" placeholder="Email Address" formControlName="email">
+                        <mat-icon matSuffix>mode_edit</mat-icon>
+                        <mat-error>Missing password.</mat-error>
+                      </mat-form-field>
+  
+                      <mat-form-field class="field-full-width">
+                        <input matInput type="password" placeholder="Current Password" formControlName="currentPassword">
+                        <mat-icon matSuffix>mode_edit</mat-icon>
+                        <mat-error>Missing password.</mat-error>
+                      </mat-form-field>
+
+                      <mat-form-field class="field-full-width">
+                          <input matInput type="password" placeholder="New Password" formControlName="newPassword">
+                          <mat-icon matSuffix>mode_edit</mat-icon>
+                          <mat-error>Missing password.</mat-error>
+                        </mat-form-field>
+  
+                      <button mat-button color="primary" type="submit">Submit</button>
+  
+                    </form>
+                  </div>
+                </div>
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

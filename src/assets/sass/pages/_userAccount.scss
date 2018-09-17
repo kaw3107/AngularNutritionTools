@@ -3,30 +3,31 @@
 @import "src/assets/sass/base/animations.scss";
 @import "src/assets/sass/components/_material.scss";
 
+
 .animate-pop-in {
   animation: pop-in .6s cubic-bezier(0, 0.9, 0.3, 1.2) forwards;
   opacity: 0;
 }
-.tools-calc-wrapper{
-    background-image:url("src/assets/images/background2.jpg");
-    background-repeat: no-repeat;
-    background-size: 30%;
-    background-position: bottom right;
-    height: 83vh;
+.user-account-wrapper{
+    // background-image:url("src/assets/images/background2.jpg");
+    // background-repeat: no-repeat;
+    // background-size: 30%;
+    // background-position: bottom right;
+    height: 87vh;
     padding:0!important;
     margin: 0 !important;
-    .tools-calc-card {
+    .user-account-card {
       max-width: 100%;
       padding: 5rem;
       margin-top: 3rem;
       animation-delay: .5s;
-      .tools-calc-card-title{
+      .user-account-card-title{
         color: $secondaryColor;
         font-size: 2.5em;
 
       }
           
-      .bmr-calculator-form {
+      .user-account-form {
         min-width: 15rem;
         max-width: 50rem;
         width: 100%;
@@ -37,5 +38,6 @@
         padding-bottom:1.5rem; 
         font-size: 1.8rem;
       }
+  
     }
   }
