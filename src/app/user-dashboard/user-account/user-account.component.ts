@@ -11,8 +11,7 @@ export class UserAccountComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   ngOnInit() {
-
-      console.log(this.userEmail);
+    this.userService.ngOnInit();
     }
 
 

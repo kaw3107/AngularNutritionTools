@@ -10,7 +10,7 @@ import { AuthData } from './auth-data.model';
 export class AuthService {
   authChange = new Subject<boolean>();
   private isAuthenticated = false;
-  user = UserData;
+  user: UserData;
   userID: string;
   userEmail: string;
 

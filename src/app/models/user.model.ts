@@ -1,8 +1,8 @@
-export class UserData {
-  displayName: string;
-  firstName: string;
-  lastName: string;
-  dob: string;
-  weight: number;
-  height: number;
+export interface UserData {
+  displayName?: string;
+  firstName?: string;
+  lastName?: string;
+  dob?: string;
+  weight?: number;
+  height?: number;
 }
