@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "angular-fitness-app-f5857",
+    "staging": "angular-fitness-app-f5857"
+  }
+}

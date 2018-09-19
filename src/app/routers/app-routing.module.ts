@@ -1,3 +1,4 @@
+import { SignUpDetailsComponent } from './../auth/sign-up/sign-up-details/sign-up-details.component';
 import { AuthGuard } from './../auth/auth.guard';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'blog', component: BlogComponent},
   { path: 'tools',  loadChildren: 'src/app/tools/tools.module#ToolsModule'},
   { path: 'auth/signup', component: SignUpComponent},
+  { path: 'auth/signup/details', component: SignUpDetailsComponent},
   { path: 'auth/login', component: LoginComponent},
   { path: 'user', component: UserDashboardComponent},
 ];

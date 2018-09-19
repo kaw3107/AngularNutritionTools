@@ -8,6 +8,7 @@ import { SharedModule } from '../shared/shared.module';
 import { AuthService } from 'src/app/auth/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavigationMainComponent } from '../app-navigation/navigation-main/navigation-main.component';
+import { SignUpDetailsComponent } from './sign-up/sign-up-details/sign-up-details.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { NavigationMainComponent } from '../app-navigation/navigation-main/navig
     declarations: [
         SignUpComponent,
         LoginComponent,
+        SignUpDetailsComponent,
         NavigationMainComponent
     ],
     exports: [],

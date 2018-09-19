@@ -10,28 +10,28 @@
               <mat-card-content>
                 <div class="row">
                   <div class="col-sm-12">
-                    <form class="user-account-form" autocomplete="off" [formGroup]="userAccountForm" (ngSubmit)="onSubmit()">
+                    <form class="user-account-form" autocomplete="off">
   
                       <mat-form-field class="field-full-width">
-                        <input matInput type="text" placeholder="Display Name" formControlName="displayName">
+                        <input matInput type="text" placeholder="Display Name">
                         <mat-icon matSuffix>mode_edit</mat-icon>
                         <mat-error>Invalid Display Name</mat-error>
                       </mat-form-field>
   
                       <mat-form-field class="field-full-width">
-                        <input matInput type="email" placeholder="Email Address" formControlName="email">
+                        <input matInput type="email" placeholder="{{userEmail}}">
                         <mat-icon matSuffix>mode_edit</mat-icon>
                         <mat-error>Missing password.</mat-error>
                       </mat-form-field>
   
                       <mat-form-field class="field-full-width">
-                        <input matInput type="password" placeholder="Current Password" formControlName="currentPassword">
+                        <input matInput type="password" placeholder="Current Password">
                         <mat-icon matSuffix>mode_edit</mat-icon>
                         <mat-error>Missing password.</mat-error>
                       </mat-form-field>
 
                       <mat-form-field class="field-full-width">
-                          <input matInput type="password" placeholder="New Password" formControlName="newPassword">
+                          <input matInput type="password" placeholder="New Password">
                           <mat-icon matSuffix>mode_edit</mat-icon>
                           <mat-error>Missing password.</mat-error>
                         </mat-form-field>

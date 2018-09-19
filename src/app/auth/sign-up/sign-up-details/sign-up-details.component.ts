@@ -1,0 +1,92 @@
+import { UserService } from './../../../user-dashboard/user.service';
+import { AuthService } from 'src/app/auth/auth.service';
+import { Component, OnInit } from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import moment from 'moment';
+
+
+
+@Component({
+  selector: 'app-sign-up-details',
+  templateUrl: './sign-up-details.component.html',
+  styleUrls: ['./sign-up-details.component.scss']
+})
+export class SignUpDetailsComponent implements OnInit {
+  isLinear = true;
+  minDate = moment().subtract(90, 'years').toDate();
+  maxDate = moment().subtract(16, 'years').toDate();
+
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
+
+  userFirstName: string;
+  userSecondName: string;
+  userDOB: Date;
+  userWeight: number;
+  userHeight: number;
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private authService: AuthService,
+    private userService: UserService ) { }
+
+  ngOnInit() {
+    this.initForm();
+    this.userService.ngOnInit();
+  }
+
+  initForm() {
+    this.firstFormGroup = this.formBuilder.group({
+      firstCtrl: ['', Validators.required],
+      secondCtrl: ['', Validators.required]
+    });
+    this.secondFormGroup = this.formBuilder.group({
+      firstCtrl: ['', Validators.required],
+      secondCtrl: ['', Validators.required],
+      thirdCtrl: ['', Validators.required],
+    });
+  }
+
+  setFormData() {
+    this.userFirstName = this.firstFormGroup.controls['firstCtrl'].value;
+    this.userSecondName = this.firstFormGroup.controls['secondCtrl'].value;
+    this.userDOB = this.secondFormGroup.controls['firstCtrl'].value;
+    this.userWeight = this.secondFormGroup.controls['secondCtrl'].value;
+    this.userHeight = this.secondFormGroup.controls['thirdCtrl'].value;
+  }
+
+  getUserFirstName() {
+    return this.userFirstName;
+  }
+
+  getUserLastName() {
+    return this.userSecondName;
+  }
+
+  getUserDob() {
+    return this.userDOB;
+  }
+
+  getUserWeight() {
+    return this.userWeight;
+  }
+
+  getUserHeight() {
+    return this.userHeight;
+  }
+
+
+  onSubmit() {
+
+    this.setFormData();
+
+    this.userService.createUserDetails({
+      displayName: this.userFirstName + ' ' + this.userSecondName,
+      firstName: this.userFirstName,
+      lastName: this.userSecondName,
+      dob: this.userDOB.toLocaleDateString(),
+      weight: this.userWeight,
+      height: this.userHeight,
+    });
+  }
+}
