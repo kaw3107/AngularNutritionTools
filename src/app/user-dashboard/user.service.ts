@@ -33,38 +33,11 @@ private basePath: String = '/user';
    ngOnInit() {
     this.setUser();
     this.fetchAvailableUsers();
-    this.afs.collection("users")
-    .doc(this.id)
-    .ref
-    .get().then(function(doc) {
-        if (doc.exists) {
-            console.log("Document data:", doc.data());
-        } else {
-            console.log("No such document!");
-        }
-    }).catch(function(error) {
-        console.log("Error getting document:", error);
-    });
-    //  this.fetchAvailableUsers();
-
    }
 
    setUser() {
      this.userID = this.authservice.getUserID();
    }
-
-   fetchUser(userData: UserData) {
-     console.log(userData.displayName);
-  }
-
-  // user() {
-  //   this.userDoc = this.db.collection('user').doc(this.userID);
-  //   const displayName
-  //   this.getUser({
-  //     displayName: this.userDoc.data().displayName,
-  //   });
-  // }
-  // }
 
    createUserDetails(userData: UserData) {
     this.db.collection('users').doc(this.userID).set(userData);
@@ -75,16 +48,5 @@ private basePath: String = '/user';
 
    fetchAvailableUsers() {
    }
-
-
-  //  fetchUserDetails () {
-  //    this.fbSubs.push(this.db
-  //     .collection('users')
-  //     .doc(this.userID)
-  //     .valueChanges()
-  //     .subscribe((userData: UserData) => {
-  //       this.userDetailsChanged.next(userData);
-  //     }));
-  //  }
 
 }
