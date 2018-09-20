@@ -18,10 +18,13 @@ import { Router } from '@angular/router';
 
 export class UserService implements OnInit {
 userID: string;
-usersCollection: AngularFirestoreCollection<UserData>;
-user: Observable<UserData>;
-userDoc: AngularFirestoreDocument<UserData>;
-private basePath: String = '/user';
+email: string;
+private userRef: AngularFirestoreCollection<UserData>;
+userChanged = new Subject<UserData>();
+docId: Observable<UserData[]>;
+private userData: UserData[] = [];
+// users: Observable<any>;
+displayName: string;
 
 
   constructor(
@@ -32,11 +35,29 @@ private basePath: String = '/user';
 
    ngOnInit() {
     this.setUser();
-    this.fetchAvailableUsers();
    }
 
    setUser() {
-     this.userID = this.authservice.getUserID();
+     this.userID = this.authservice.userID;
+     this.email = this.authservice.userEmail;
+   }
+
+   fetchUser(){
+//     this.userRef = this.db.collection('users', ref => ref.where('id', '==', this.userID));
+
+//     this.docId = this.userRef.snapshotChanges().map( changes => {
+//         return changes.map(a => {
+//             const data = a.payload.doc.data() as UserData;
+//             const id = a.payload.doc.id;
+//             return { id, ...data };
+//         });
+//     });
+
+// this.docId.subscribe(docs => {
+//   docs.forEach(doc => {
+//     this.displayName = doc.displayName;
+//   });
+// });
    }
 
    createUserDetails(userData: UserData) {
@@ -45,8 +66,4 @@ private basePath: String = '/user';
       this.router.navigate(['/user']);
  }, 1500);
    }
-
-   fetchAvailableUsers() {
-   }
-
-}
+  }

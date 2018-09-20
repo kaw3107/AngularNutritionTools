@@ -33,6 +33,8 @@ export class SignUpDetailsComponent implements OnInit {
   ngOnInit() {
     this.initForm();
     this.userService.ngOnInit();
+    console.log(this.userService.userID);
+    console.log(this.userService.email);
   }
 
   initForm() {
@@ -81,6 +83,8 @@ export class SignUpDetailsComponent implements OnInit {
     this.setFormData();
 
     this.userService.createUserDetails({
+      id: this.userService.userID,
+      email: this.userService.email,
       displayName: this.userFirstName + ' ' + this.userSecondName,
       firstName: this.userFirstName,
       lastName: this.userSecondName,
