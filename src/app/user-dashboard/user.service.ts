@@ -42,7 +42,7 @@ displayName: string;
      this.email = this.authservice.userEmail;
    }
 
-   fetchUser(){
+  //  fetchUser(){
 //     this.userRef = this.db.collection('users', ref => ref.where('id', '==', this.userID));
 
 //     this.docId = this.userRef.snapshotChanges().map( changes => {
@@ -58,7 +58,7 @@ displayName: string;
 //     this.displayName = doc.displayName;
 //   });
 // });
-   }
+  //  }
 
    createUserDetails(userData: UserData) {
     this.db.collection('users').doc(this.userID).set(userData);

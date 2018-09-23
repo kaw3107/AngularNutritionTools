@@ -1,6 +1,10 @@
+import { StripHtmlTagsPipe } from 'src/app/pipes/strip-html-tags.pipe';
 import { UserService } from './user-dashboard/user.service';
 import { AuthGuard } from './auth/auth.guard';
 import { routing } from './routers/app-routing.module';
+import { HttpModule } from '@angular/http';
+import { FeedService } from 'src/app/blog/feed.service';
+
 
 import { AuthService } from 'src/app/auth/auth.service';
 import { HeaderComponent } from './home/header/header.component';
@@ -30,6 +34,7 @@ import { UserProfileComponent } from './user-dashboard/user-profile/user-profile
 import { UserAccountComponent } from './user-dashboard/user-account/user-account.component';
 import { UserGoalsComponent } from './user-dashboard/user-goals/user-goals.component';
 import { SignUpDetailsComponent } from './auth/sign-up/sign-up-details/sign-up-details.component';
+import { FeedCardComponent } from './blog/feed-card/feed-card.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +51,8 @@ import { SignUpDetailsComponent } from './auth/sign-up/sign-up-details/sign-up-d
     UserAccountComponent,
     UserGoalsComponent,
     SignUpDetailsComponent,
+    FeedCardComponent,
+    StripHtmlTagsPipe,
   ],
   imports: [
     // BrowserModule,
@@ -59,8 +66,9 @@ import { SignUpDetailsComponent } from './auth/sign-up/sign-up-details/sign-up-d
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     SharedModule,
+    HttpModule,
   ],
-  providers: [AuthService, UserService],
+  providers: [AuthService, UserService, FeedService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
