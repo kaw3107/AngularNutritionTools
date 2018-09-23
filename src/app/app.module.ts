@@ -35,6 +35,8 @@ import { UserAccountComponent } from './user-dashboard/user-account/user-account
 import { UserGoalsComponent } from './user-dashboard/user-goals/user-goals.component';
 import { SignUpDetailsComponent } from './auth/sign-up/sign-up-details/sign-up-details.component';
 import { FeedCardComponent } from './blog/feed-card/feed-card.component';
+import { CardioTrackerComponent } from './tracking-tools/cardio-tracker/cardio-tracker.component';
+import { TrackingToolsComponent } from './tracking-tools/tracking-tools.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,6 +55,8 @@ import { FeedCardComponent } from './blog/feed-card/feed-card.component';
     SignUpDetailsComponent,
     FeedCardComponent,
     StripHtmlTagsPipe,
+    CardioTrackerComponent,
+    TrackingToolsComponent,
   ],
   imports: [
     // BrowserModule,

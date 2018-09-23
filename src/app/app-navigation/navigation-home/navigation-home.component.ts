@@ -17,6 +17,7 @@ navElementThree = String('register');
 navElementFour = String('signin');
 navElementFive = String('sign out');
 navElementSix = String('Profile');
+navElementSeven = String('Blog');
 
   constructor(private authService: AuthService) { }
 

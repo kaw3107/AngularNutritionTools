@@ -23,9 +23,9 @@
       <li *ngIf="isAuthenticated()" class="nav-item">
         <a class="nav-link" routerLink="/user" style="cursor: pointer">{{navElementSix | uppercase}}</a>
         </li>
-      <!--<li class="nav-item">
-          <a class="nav-link" routerLink="/blog">Blog</a>
-          </li>-->
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/blog">{{navElementSeven | uppercase}}</a>
+            </li>
       <li *ngIf="!isAuthenticated()" class="nav-item">
       <a class="nav-link" routerLink="/auth/signup">{{navElementThree | uppercase}}</a>
       </li>
