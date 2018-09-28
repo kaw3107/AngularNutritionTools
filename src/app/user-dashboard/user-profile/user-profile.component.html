@@ -31,7 +31,7 @@
                         matInput
                         type="text" 
                         placeholder={{user.dob}} 
-                        [(ngModel)]="user.dob" 
+                        [(ngModel)]="user.dob"
                         name="dob" 
                         [disabled]="editDisplayNameState === false"
                         >
@@ -45,7 +45,7 @@
                         matInput
                         type="text" 
                         placeholder={{user.gender}} 
-                        [(ngModel)]="user.gender" 
+                        [(ngModel)]="user.gender"
                         name="gender" 
                         [disabled]="editDisplayNameState === false"
                         >
@@ -59,10 +59,11 @@
                         matInput
                         type="text" 
                         placeholder={{user.height}} 
-                        [(ngModel)]="user.height" 
+                        [(ngModel)]="user.height"
                         name="height" 
                         [disabled]="editDisplayNameState === false"
                         >
+                        <span matSuffix>CM</span>
                         <mat-icon style="cursor:pointer;" (click)="editDisplayNameMode()" matSuffix>mode_edit</mat-icon>
                         <mat-error>Invalid Display Name</mat-error>
                       </mat-form-field>
@@ -77,6 +78,7 @@
                         name="weight" 
                         [disabled]="editDisplayNameState === false"
                         >
+                        <span matSuffix>KG</span>
                         <mat-icon style="cursor:pointer;" (click)="editDisplayNameMode()" matSuffix>mode_edit</mat-icon>
                         <mat-error>Invalid Display Name</mat-error>
                       </mat-form-field>
