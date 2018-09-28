@@ -48,12 +48,6 @@ export class AuthService {
       });
   }
 
-  // submitUserDetails(userData: UserData) {
-  //   this.db.collection('users').doc(this.userID).set({
-  //     userData.email,
-  //   });
-  // }
-
 login(authData: AuthData) {
   this.afAuth.auth
     .signInWithEmailAndPassword(authData.email, authData.password)

@@ -1,3 +1,24 @@
-<p>
-  tracking-tools works!
-</p>
+<app-navigation-main></app-navigation-main>
+<div>
+    <ul class="breadcrumb">
+      <li><a routerLink="">Home</a></li>
+      <li>Tools</li>
+    </ul>
+  </div>
+        <mat-tab-group>
+            <mat-tab routerLink="/tools/calorie-calculator" label="Calorie Calculator">
+              <app-calorie-calculator></app-calorie-calculator>
+                </mat-tab>
+
+            <mat-tab routerLink="/tools/bmr-calculator" label="BMR Calculator"> 
+              <app-bmr-calculator></app-bmr-calculator>
+                </mat-tab>
+
+            <mat-tab routerLink="/tools/calorie-calculator" label="IIFYM Calculator">
+              <app-macro-calculator></app-macro-calculator>
+                </mat-tab>
+
+            <mat-tab routerLink="/tools/bmr-calculator" label="TDEE Calculator"> 
+              <app-tdee-calculator></app-tdee-calculator>
+            </mat-tab>
+          </mat-tab-group>

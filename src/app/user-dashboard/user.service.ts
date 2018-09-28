@@ -19,13 +19,9 @@ import { Router } from '@angular/router';
 export class UserService implements OnInit {
 userID: string;
 email: string;
-private userRef: AngularFirestoreCollection<UserData>;
-userChanged = new Subject<UserData>();
-docId: Observable<UserData[]>;
-private userData: UserData[] = [];
-// users: Observable<any>;
-displayName: string;
-
+usersCollection: AngularFirestoreCollection<UserData>;
+users: Observable<UserData[]>;
+userDoc: AngularFirestoreDocument<UserData>;
 
   constructor(
     private authservice: AuthService,
@@ -35,6 +31,19 @@ displayName: string;
 
    ngOnInit() {
     this.setUser();
+    this.usersCollection = this.db.collection('users');
+
+    this.users = this.usersCollection.snapshotChanges().map(changes => {
+      return changes.map(a => {
+        const data = a.payload.doc.data() as UserData;
+        data.id = a.payload.doc.id;
+        return data;
+      });
+    });
+   }
+
+   getUserData() {
+     return this.users;
    }
 
    setUser() {
@@ -42,28 +51,16 @@ displayName: string;
      this.email = this.authservice.userEmail;
    }
 
-  //  fetchUser(){
-//     this.userRef = this.db.collection('users', ref => ref.where('id', '==', this.userID));
-
-//     this.docId = this.userRef.snapshotChanges().map( changes => {
-//         return changes.map(a => {
-//             const data = a.payload.doc.data() as UserData;
-//             const id = a.payload.doc.id;
-//             return { id, ...data };
-//         });
-//     });
-
-// this.docId.subscribe(docs => {
-//   docs.forEach(doc => {
-//     this.displayName = doc.displayName;
-//   });
-// });
-  //  }
-
    createUserDetails(userData: UserData) {
     this.db.collection('users').doc(this.userID).set(userData);
     setTimeout(()=> {
       this.router.navigate(['/user']);
- }, 1500);
+ }, 1000);
+   }
+
+   updateUser(userData: UserData) {
+     this.userDoc = this.db.doc('users/' + this.authservice.userID);
+     this.userDoc.update(userData);
+
    }
   }

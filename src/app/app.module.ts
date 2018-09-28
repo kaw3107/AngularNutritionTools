@@ -31,7 +31,6 @@ import { NavigationHomeComponent } from 'src/app/app-navigation/navigation-home/
 import { SharedModule } from './shared/shared.module';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { UserProfileComponent } from './user-dashboard/user-profile/user-profile.component';
-import { UserAccountComponent } from './user-dashboard/user-account/user-account.component';
 import { UserGoalsComponent } from './user-dashboard/user-goals/user-goals.component';
 import { SignUpDetailsComponent } from './auth/sign-up/sign-up-details/sign-up-details.component';
 import { FeedCardComponent } from './blog/feed-card/feed-card.component';
@@ -50,7 +49,6 @@ import { TrackingToolsComponent } from './tracking-tools/tracking-tools.componen
     NavigationHomeComponent,
     UserDashboardComponent,
     UserProfileComponent,
-    UserAccountComponent,
     UserGoalsComponent,
     SignUpDetailsComponent,
     FeedCardComponent,

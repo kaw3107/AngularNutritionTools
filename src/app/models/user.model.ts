@@ -5,6 +5,7 @@ export interface UserData {
   firstName?: string;
   lastName?: string;
   dob?: string;
+  gender?: string;
   weight?: number;
   height?: number;
 }

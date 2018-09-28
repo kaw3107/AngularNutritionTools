@@ -24,10 +24,10 @@ export class SignUpDetailsComponent implements OnInit {
   userDOB: Date;
   userWeight: number;
   userHeight: number;
+  userGender: string;
 
   constructor(
     private formBuilder: FormBuilder,
-    private authService: AuthService,
     private userService: UserService ) { }
 
   ngOnInit() {
@@ -46,6 +46,7 @@ export class SignUpDetailsComponent implements OnInit {
       firstCtrl: ['', Validators.required],
       secondCtrl: ['', Validators.required],
       thirdCtrl: ['', Validators.required],
+      fourthCtrl: ['', Validators.required],
     });
   }
 
@@ -55,28 +56,8 @@ export class SignUpDetailsComponent implements OnInit {
     this.userDOB = this.secondFormGroup.controls['firstCtrl'].value;
     this.userWeight = this.secondFormGroup.controls['secondCtrl'].value;
     this.userHeight = this.secondFormGroup.controls['thirdCtrl'].value;
+    this.userGender = this.secondFormGroup.controls['fourthCtrl'].value;
   }
-
-  getUserFirstName() {
-    return this.userFirstName;
-  }
-
-  getUserLastName() {
-    return this.userSecondName;
-  }
-
-  getUserDob() {
-    return this.userDOB;
-  }
-
-  getUserWeight() {
-    return this.userWeight;
-  }
-
-  getUserHeight() {
-    return this.userHeight;
-  }
-
 
   onSubmit() {
 
@@ -88,6 +69,7 @@ export class SignUpDetailsComponent implements OnInit {
       displayName: this.userFirstName + ' ' + this.userSecondName,
       firstName: this.userFirstName,
       lastName: this.userSecondName,
+      gender: this.userGender,
       dob: this.userDOB.toLocaleDateString(),
       weight: this.userWeight,
       height: this.userHeight,

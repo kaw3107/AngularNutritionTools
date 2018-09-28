@@ -1,0 +1,99 @@
+<section>
+    <div class="row justify-content-center user-account-wrapper">
+      <div class="col-sm-5">
+        <div class="row">
+          <div *ngFor="let user of users" class="col-sm-12">
+            <mat-card *ngIf="userID === user.id" class="user-account-card animate-pop-in">
+              <mat-card-header>
+                <mat-card-title class="user-account-card-title">You're Profile</mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+                <div class="row">
+                  <div class="col-sm-12">
+                     <form (ngSubmit)="updateUserData(user)" class="user-account-form" autocomplete="off">
+                      <mat-form-field class="field-full-width">
+                        <mat-label>Display Name</mat-label>
+                        <input 
+                        matInput
+                        type="text" 
+                        placeholder={{user.displayName}} 
+                        [(ngModel)]="user.displayName" 
+                        name="displayName" 
+                        [disabled]="editDisplayNameState === false"
+                        >
+                        <mat-icon style="cursor:pointer;" (click)="editDisplayNameMode()" matSuffix>mode_edit</mat-icon>
+                        <mat-error>Invalid Display Name</mat-error>
+                      </mat-form-field>
+
+                      <mat-form-field class="field-full-width">
+                        <mat-label>Date of Birth</mat-label>
+                        <input 
+                        matInput
+                        type="text" 
+                        placeholder={{user.dob}} 
+                        [(ngModel)]="user.dob" 
+                        name="dob" 
+                        [disabled]="editDisplayNameState === false"
+                        >
+                        <mat-icon style="cursor:pointer;" (click)="editDisplayNameMode()" matSuffix>mode_edit</mat-icon>
+                        <mat-error>Invalid Display Name</mat-error>
+                      </mat-form-field>
+
+                      <mat-form-field class="field-full-width">
+                        <mat-label>Height</mat-label>
+                        <input 
+                        matInput
+                        type="text" 
+                        placeholder={{user.gender}} 
+                        [(ngModel)]="user.gender" 
+                        name="gender" 
+                        [disabled]="editDisplayNameState === false"
+                        >
+                        <mat-icon style="cursor:pointer;" (click)="editDisplayNameMode()" matSuffix>mode_edit</mat-icon>
+                        <mat-error>Invalid Display Name</mat-error>
+                      </mat-form-field>
+
+                      <mat-form-field class="field-full-width">
+                        <mat-label>Height</mat-label>
+                        <input 
+                        matInput
+                        type="text" 
+                        placeholder={{user.height}} 
+                        [(ngModel)]="user.height" 
+                        name="height" 
+                        [disabled]="editDisplayNameState === false"
+                        >
+                        <mat-icon style="cursor:pointer;" (click)="editDisplayNameMode()" matSuffix>mode_edit</mat-icon>
+                        <mat-error>Invalid Display Name</mat-error>
+                      </mat-form-field>
+
+                      <mat-form-field class="field-full-width">
+                        <mat-label>Weight</mat-label>
+                        <input 
+                        matInput
+                        type="text" 
+                        placeholder={{user.weight}} 
+                        [(ngModel)]="user.weight" 
+                        name="weight" 
+                        [disabled]="editDisplayNameState === false"
+                        >
+                        <mat-icon style="cursor:pointer;" (click)="editDisplayNameMode()" matSuffix>mode_edit</mat-icon>
+                        <mat-error>Invalid Display Name</mat-error>
+                      </mat-form-field>
+
+                      <div class="row justify-content-center">
+                        <div class="col-6">
+                          <button mat-raised-button color color="primary" type="submit">Submit Changes</button>
+                        </div>
+                      </div>
+  
+                    </form>
+                  </div>
+                </div>
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> 
