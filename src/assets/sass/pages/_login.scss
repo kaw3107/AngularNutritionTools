@@ -7,13 +7,6 @@
   opacity: 0;
 }
 .signup-wrapper{
-    background-image:url("src/assets/images/background1.jpg");
-    background-repeat: no-repeat;
-    background-size: 30%;
-    background-position: bottom right;
-    height: 80vh;
-    padding:0!important;
-    margin: 0 !important;
     .signup-card {
       max-width: 100%;
       padding: 4rem;
@@ -22,9 +15,8 @@
       .signup-card-title{
         color: $secondaryColor;
         font-size: 2.5em;
-
       }
-          
+
       .example-form {
         min-width: 15rem;
         max-width: 50rem;

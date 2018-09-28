@@ -1,3 +1,4 @@
+import { AppNavigationComponent } from './app-navigation/app-navigation.component';
 import { StripHtmlTagsPipe } from 'src/app/pipes/strip-html-tags.pipe';
 import { UserService } from './user-dashboard/user.service';
 import { AuthGuard } from './auth/auth.guard';
@@ -11,9 +12,9 @@ import { HeaderComponent } from './home/header/header.component';
 
 import { MaterialModule } from './material.module';
 import { BrowserModule } from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
@@ -27,7 +28,6 @@ import { BlogComponent } from './blog/blog.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { LoginComponent } from './auth/login/login.component';
 import { SingupFormComponent } from './home/singup-form/singup-form.component';
-import { NavigationHomeComponent } from 'src/app/app-navigation/navigation-home/navigation-home.component';
 import { SharedModule } from './shared/shared.module';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { UserProfileComponent } from './user-dashboard/user-profile/user-profile.component';
@@ -45,14 +45,14 @@ import { TrackingToolsComponent } from './tracking-tools/tracking-tools.componen
     SignUpComponent,
     LoginComponent,
     SingupFormComponent,
-    NavigationHomeComponent,
-    UserDashboardComponent,
     UserProfileComponent,
     SignUpDetailsComponent,
     FeedCardComponent,
     StripHtmlTagsPipe,
     CardioTrackerComponent,
     TrackingToolsComponent,
+    UserDashboardComponent,
+    AppNavigationComponent
   ],
   imports: [
     // BrowserModule,

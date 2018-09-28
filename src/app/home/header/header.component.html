@@ -1,38 +1,53 @@
+<app-app-navigation></app-app-navigation>
 <header class="app-home-header">
-  <div class="app-home-header-img">
+  <div class="row home-content-wrapper animate-pop-in">
+    <div class="col-sm-12">
 
-    <app-navigation-home></app-navigation-home>
+      <div class="row justify-content-center align-self-center menu-container">
+        <div class="col-3 menu-grid-item item1">
+          <a href="">
+          <span class="fa fa-user menu-grid-icon"></span>
+          <br>
+          <h2>My Account</h2>
+        </a>
+        </div>
+        <div class="col-3 menu-grid-item item2">
+            <span class="fa fa-rss-square menu-grid-icon"></span>
+            <br>
+            <h2>Blog</h2>
+        </div>
+        <div class="col-3 menu-grid-item item3">
+            <span class="fa fa-user menu-grid-icon"></span>
+            <br>
+            <h2>Cardio Tracker</h2>
+        </div>
+      </div>
 
-    <div class="row home-content-wrapper animate-pop-in">
-      <div class="col-sm-12">
-
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="row justify-content-center home-intro-text-wrapper">
-              <div class="col-sm-8">
-
-                <h1 class="header-intro-text animate-pop-in" style="text-align: center"> {{header | uppercase}}</h1>
-              </div>
-            </div>
-
-            <div class="row justify-content-center home-intro-subtext-wrapper">
-            <div class="col-sm-6">
-
-              <h2 class="header-intro-subtext animate-pop-in" style="text-align: center">{{subtitle | uppercase}}</h2>
-            </div>
-            </div>
+      <div class="row justify-content-center menu-container">
+          <div class="col-3 menu-grid-item item4">
+            <span class="fa fa-user menu-grid-icon"></span>
+            <br>
+            <h2>TDEE Calculator</h2>
+          </div>
+          <div class="col-3 menu-grid-item item5">
+              <span class="fa fa-user menu-grid-icon"></span>
+              <br>
+              <h2>Macronutrient Calculator</h2>
+          </div>
+          <div class="col-3 menu-grid-item item6">
+              <span class="fa fa-user menu-grid-icon"></span>
+              <br>
+              <h2>IIFYM Calculator</h2>
           </div>
         </div>
-
-      <div class="row justify-content-center home-signup-wrapper animate-pop-in">
-        <div class="col-sm-4">
-          <app-singup-form>
-          </app-singup-form>
-        </div>
-        </div>
-
+<!-- 
+    <div class="row justify-content-center home-signup-wrapper animate-pop-in">
+      <div class="col-sm-4">
+        <app-singup-form>
+        </app-singup-form>
       </div>
-    </div>
+    </div> -->
+  </div>
 
   </div>
 </header>
