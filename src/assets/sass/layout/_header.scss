@@ -1,54 +1,90 @@
 @import "src/assets/sass/base/animations.scss";
+@import "src/assets/sass/abstracts/_mixins.scss";
 
 .animate-pop-in {
   animation: pop-in 0.6s cubic-bezier(0, 0.9, 0.3, 1.2) forwards;
   opacity: 0;
 }
 
-.app-home-header {
-  height: auto;
-}
-
 .home-content-wrapper {
-  padding-top: 8.5rem !important;
-  padding-bottom: 8.5rem !important;
-  background-color:#DFE0E2;
-  .menu-grid-item {
-    text-align: center;
-    padding: 5rem 0.3rem 5rem 0.3rem;
-    .menu-grid-icon {
-      font-size: 2.6rem;
+  background-color: #ffffff;
+  height: 100vh;
+  @include for-tablet-landscape-up {
+    padding-left: 19rem !important;
+  }
+
+  .verticalAlign{
+    @include vertical-align();
+  .item-container {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    .item1 {
+      border-left: solid gray 0.1rem;
+      border-top: solid gray 0.1rem;
+      border-right: solid gray 0.1rem;
+      border-bottom: solid gray 0.1rem;
+      background-image: url('src/assets/images/home-menu-item1-bg.jpg');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      text-align: center;
+      .opacity {
+        background-color: rgba(11, 11, 11, 0.5);
+        height: 100%;
+        width: 100%;
+        padding: 5rem 0rem 5rem 0rem;
+        margin: 0 !important;
+      }
+    }
+    .item2 {
+      border-top: solid gray 0.1rem;
+      border-right: solid gray 0.1rem;
+      border-bottom: solid gray 0.1rem;
+      background-image: url('src/assets/images/home-menu-item2-bg.jpg');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      text-align: none;
+      .opacity {
+        background-color: rgba(11, 11, 11, 0.5);
+        height: 100%;
+        width: 100%;
+        padding: 5rem 0rem 5rem 3rem;
+        margin: 0 !important;
+      }
+    }
+    .item3 {
+      border-top: solid gray 0.1rem;
+      border-right: solid gray 0.1rem;
+      border-bottom: solid gray 0.1rem;
+      background-image: url('src/assets/images/home-menu-item3-bg.jpg');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      text-align: none;
+      .opacity {
+        background-color: rgba(11, 11, 11, 0.5);
+        height: 100%;
+        width: 100%;
+        padding: 5rem 0rem 5rem 3rem;
+        margin: 0 !important;
+      }
+    }
+    .item4 {
+      border-left: solid gray 0.1rem;
+      border-right: solid gray 0.1rem;
+      border-bottom: solid gray 0.1rem;
+    }
+    .item5 {
+      border-right: solid gray 0.1rem;
+      border-bottom: solid gray 0.1rem;
+    }
+    .item6 {
+      border-right: solid gray 0.1rem;
+      border-bottom: solid gray 0.1rem;
     }
   }
-  .item1 {
-    border-left: solid gray 0.1rem;
-    border-top: solid gray 0.1rem;
-    border-right: solid gray 0.1rem;
-    border-bottom: solid gray 0.1rem;
-  }
-  .item2 {
-    border-top: solid gray 0.1rem;
-    border-right: solid gray 0.1rem;
-    border-bottom: solid gray 0.1rem;
-  }
-  .item3 {
-    border-top: solid gray 0.1rem;
-    border-right: solid gray 0.1rem;
-    border-bottom: solid gray 0.1rem;
-  }
-  .item4 {
-    border-left: solid gray 0.1rem;
-    border-right: solid gray 0.1rem;
-    border-bottom: solid gray 0.1rem;
-  }
-  .item5 {
-    border-right: solid gray 0.1rem;
-    border-bottom: solid gray 0.1rem;
-  }
-  .item6 {
-    border-right: solid gray 0.1rem;
-    border-bottom: solid gray 0.1rem;
-  }
+}
 }
 
 .home-signup-wrapper {
