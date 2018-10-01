@@ -1,10 +1,4 @@
-<app-navigation-main></app-navigation-main>
-<div>
-    <ul class="breadcrumb">
-      <li><a routerLink="">Home</a></li>
-      <li>Blog</li>
-    </ul>
-  </div>
+<app-app-navigation></app-app-navigation>
   <div class="row card-deck justify-content-center feedWrapper">
           
 <app-feed-card *ngFor="let feed of feeds" [feed]="feed"></app-feed-card>
