@@ -22,8 +22,6 @@
   transform: translateY(-50%);
 }
 
-
-
 // Creates a wrapper for a series of columns
 @mixin make-row($gutters: $grid-gutter-widths) {
   display: flex;
