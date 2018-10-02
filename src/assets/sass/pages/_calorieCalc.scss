@@ -1,1 +1,39 @@
-@import "src/assets/sass/pages/_bmrCalc.scss";
+@import "src/assets/sass/abstracts/_mixins.scss";
+@import "src/assets/sass/abstracts/_variables.scss";
+@import "src/assets/sass/base/animations.scss";
+@import "src/assets/sass/components/_material.scss";
+
+.animate-pop-in {
+  animation: pop-in .6s cubic-bezier(0, 0.9, 0.3, 1.2) forwards;
+  opacity: 0;
+}
+.tools-calc-wrapper{
+    .tools-calc-card {
+      max-width: 100%;
+      padding: 5rem;
+      margin-top: 3rem;
+      animation-delay: .5s;
+      z-index: 1 !important;
+      .tools-calc-card-title{
+        color: black;
+        font-size: 2.5em;
+        @include for-phone-only{
+            font-size: 1.5rem;
+        }
+
+      }    
+      .bmr-calculator-form {
+        min-width: 15rem;
+        max-width: 50rem;
+        width: 100%;
+        }
+      }
+      .field-full-width {
+        width: 100%;
+        padding-bottom:1.5rem; 
+        font-size: 1.8rem;
+        @include for-phone-only{
+            font-size: 1.3rem;
+        }
+      }
+  }

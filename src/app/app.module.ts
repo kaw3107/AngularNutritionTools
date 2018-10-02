@@ -1,4 +1,3 @@
-import { AppNavigationComponent } from './app-navigation/app-navigation.component';
 import { StripHtmlTagsPipe } from 'src/app/pipes/strip-html-tags.pipe';
 import { UserService } from './user-dashboard/user.service';
 import { AuthGuard } from './auth/auth.guard';
@@ -52,7 +51,6 @@ import { TrackingToolsComponent } from './tracking-tools/tracking-tools.componen
     CardioTrackerComponent,
     TrackingToolsComponent,
     UserDashboardComponent,
-    AppNavigationComponent
   ],
   imports: [
     // BrowserModule,

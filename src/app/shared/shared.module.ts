@@ -1,3 +1,4 @@
+import { AppNavigationComponent } from './../app-navigation/app-navigation.component';
 import { TdeeCalculatorComponent } from './../tools/tdee-calculator/tdee-calculator.component';
 import { AuthGuard } from './../auth/auth.guard';
 import { NgModule } from '@angular/core';
@@ -6,7 +7,6 @@ import { AuthService } from 'src/app/auth/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { routing } from './../routers/tools-routing.module';
 import { MaterialModule } from './../material.module';
-import { NavigationMainComponent } from '../app-navigation/navigation-main/navigation-main.component';
 import { CalorieCalculatorComponent } from 'src/app/tools/calorie-calculator/calorie-calculator.component';
 import { MacroCalculatorComponent } from 'src/app/tools/macro-calculator/macro-calculator.component';
 import { ToolsStartComponent } from 'src/app/tools/tools-start/tools-start.component';
@@ -25,7 +25,7 @@ import { ToolsModule } from '../tools/tools.module';
   exports : [
     CommonModule,
     FormsModule,
-    NavigationMainComponent,
+    AppNavigationComponent,
     CalorieCalculatorComponent,
     MacroCalculatorComponent,
     ToolsStartComponent,
@@ -33,7 +33,7 @@ import { ToolsModule } from '../tools/tools.module';
     TdeeCalculatorComponent
   ],
   declarations: [
-    NavigationMainComponent,
+    AppNavigationComponent,
     CalorieCalculatorComponent,
     MacroCalculatorComponent,
     ToolsStartComponent,

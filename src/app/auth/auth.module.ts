@@ -1,3 +1,4 @@
+import { AppNavigationComponent } from './../app-navigation/app-navigation.component';
 import { MaterialModule } from './../material.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -7,7 +8,6 @@ import { ToolsModule } from '../tools/tools.module';
 import { SharedModule } from '../shared/shared.module';
 import { AuthService } from 'src/app/auth/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NavigationMainComponent } from '../app-navigation/navigation-main/navigation-main.component';
 import { SignUpDetailsComponent } from './sign-up/sign-up-details/sign-up-details.component';
 
 
@@ -23,7 +23,7 @@ import { SignUpDetailsComponent } from './sign-up/sign-up-details/sign-up-detail
         SignUpComponent,
         LoginComponent,
         SignUpDetailsComponent,
-        NavigationMainComponent
+        AppNavigationComponent
     ],
     exports: [],
 

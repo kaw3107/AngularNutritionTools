@@ -1,31 +1,9 @@
-.mat-card-header{
-    display: flex;
-    justify-content: center;
-    padding-bottom: 2.5rem;
-  }
+@import '~@angular/material/theming';
+@include mat-core();
 
-  .mat-card-content{
-    display: flex;
-    justify-content: center;
-  }
+  $primary: mat-palette($mat-red, 800);
+  $accent: mat-palette($mat-light-blue ,200);
 
-  .mat-card-actions{
-    display: flex;
-    justify-content: center;
-  }
-  .mat-button{
-    font-size: 1.7rem;
-  }
+  $theme: mat-light-theme($primary, $accent);
 
-  .mat-radio-button ~ .mat-radio-button {
-    padding-right: 16px;
-  }
-  .example-headers-align .mat-expansion-panel-header-title, 
-.example-headers-align .mat-expansion-panel-header-description {
-  flex-basis: 0;
-}
-
-.example-headers-align .mat-expansion-panel-header-description {
-  justify-content: space-between;
-  max-width: 100%;
-}
+@include angular-material-theme($theme);
