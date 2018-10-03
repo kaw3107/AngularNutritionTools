@@ -4,37 +4,58 @@
 @import "src/assets/sass/components/_material.scss";
 
 .animate-pop-in {
-  animation: pop-in .6s cubic-bezier(0, 0.9, 0.3, 1.2) forwards;
+  animation: pop-in 0.6s cubic-bezier(0, 0.9, 0.3, 1.2) forwards;
   opacity: 0;
 }
-.tools-calc-wrapper{
-    background-repeat: no-repeat;
-    background-size: 30%;
-    background-position: bottom right;
-    height: 100vh;
-    padding:0!important;
-    margin: 0 !important;
-    .tools-calc-card {
-      max-width: 100%;
-      padding: 4rem;
-      margin-top: 3rem;
-      animation-delay: .5s;
-      .tools-calc-card-title{
-        color: $secondaryColor;
-        font-size: 2.5em;
 
-      }
-          
-      .bmr-calculator-form {
-        min-width: 15rem;
-        max-width: 50rem;
-        width: 100%;
-      }
-      
-      .field-full-width {
-        width: 100%;
-        padding-bottom:1.5rem; 
-        font-size: 1.8rem;
-      }
+.desktop-tools-wrapper {
+  .tool-title {
+    padding: 6rem 0rem 5rem 0rem;
+  }
+  .form-wrapper {
+    font-size: 1.6rem;
+
+    .field-full-width {
+      width: 90%;
+      padding-bottom: 1.5rem;
+      display: block;
     }
   }
+  .result-wrapper {
+    @include vertical-align();
+  }
+}
+.tools-calc-wrapper {
+  .tools-calc-card {
+    max-width: 60%;
+    padding: 5rem;
+    margin-top: 3rem;
+    animation-delay: 0.5s;
+    z-index: 1 !important;
+    @include for-phone-only {
+      max-width: 100%;
+    }
+    .tools-calc-card-title {
+      color: black;
+      font-size: 2.5em;
+      @include for-phone-only {
+        font-size: 1.5rem;
+      }
+    }
+    .bmr-calculator-form {
+      min-width: 15rem;
+      max-width: 50rem;
+      width: 100%;
+    }
+  }
+  .field-full-width {
+    display: block;
+    width: 100%;
+    font-size: 1.3rem;
+    @include for-phone-only {
+      width: 100%;
+      padding-bottom: 1.5rem;
+      font-size: 1.3rem;
+    }
+  }
+}
