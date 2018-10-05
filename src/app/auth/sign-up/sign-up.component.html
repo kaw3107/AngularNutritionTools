@@ -1,0 +1,149 @@
+
+
+<section class="d-none d-lg-block">
+  <div class="row desktop-login-wrapper">
+    <div class="col-sm-12 col-md-10 col-lg-10">
+      <div class="row">
+      <div class="col-sm-6">
+        <div class="tool-title">
+          <h1>Register</h1>
+        </div>
+        <div class="form-wrapper">
+          <form 
+              autocomplete="off"
+               #f="ngForm" 
+               (ngSubmit)="onSubmit(f)">
+  
+                <mat-form-field class="field-full-width">
+                  <input 
+                  matInput 
+                  type="email"
+                  placeholder="Your email"
+                  ngModel name="email">
+                  <mat-hint>Please enter a valid email.</mat-hint>
+                   <mat-error>Invalid or missing email.</mat-error>
+                </mat-form-field>
+  
+                <mat-form-field class="field-full-width">
+                  <input 
+                  matInput 
+                  type="password"
+                  placeholder="Your password"
+                  ngModel name="password">
+                  <mat-hint>Please enter your password.</mat-hint>
+                  <mat-error>Missing password.</mat-error>
+                </mat-form-field>
+  
+                <button mat-button type="submit">SIGN UP</button>
+  
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="d-block d-lg-none">
+  <div class="row justify-content-center tools-auth-wrapper">
+    <div class="col-12">
+      <div class="row">
+        <div style="padding-bottom: 1rem;" class="col-12">
+          <mat-card class="tools-auth-card animate-pop-in">
+            <mat-card-header>
+              <mat-card-title class="signup-card-title">REGISTER </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+  
+              <form 
+              class="example-form"
+              autocomplete="off"
+               #f="ngForm" 
+               (ngSubmit)="onSubmit(f)">
+  
+                <mat-form-field class="example-full-width">
+                  <input 
+                  matInput 
+                  type="email"
+                  placeholder="Your email"
+                  ngModel name="email">
+                  <mat-hint>Please enter a valid email.</mat-hint>
+                   <mat-error>Invalid or missing email.</mat-error>
+                </mat-form-field>
+  
+                <mat-form-field class="example-full-width">
+                  <input 
+                  matInput 
+                  type="password"
+                  placeholder="Your password"
+                  ngModel name="password">
+                  <mat-hint>Please enter your password.</mat-hint>
+                  <mat-error>Missing password.</mat-error>
+                </mat-form-field>
+  
+                <button 
+                mat-button 
+                type="submit"
+                >SIGN UP</button>
+  
+              </form>
+              
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--   
+  <section class="row justify-content-center signup-wrapper">
+    <div class="col-sm-5">
+      <div class="row">
+        <div class="col-sm-12">
+          <mat-card class="signup-card animate-pop-in">
+            <mat-card-header>
+              <mat-card-title class="signup-card-title">REGISTER </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+  
+              <form 
+              class="example-form"
+              autocomplete="off"
+               #f="ngForm" 
+               (ngSubmit)="onSubmit(f)">
+  
+                <mat-form-field class="example-full-width">
+                  <input 
+                  matInput 
+                  type="email"
+                  placeholder="Your email"
+                  ngModel name="email">
+                  <mat-hint>Please enter a valid email.</mat-hint>
+                   <mat-error>Invalid or missing email.</mat-error>
+                </mat-form-field>
+  
+                <mat-form-field class="example-full-width">
+                  <input 
+                  matInput 
+                  type="password"
+                  placeholder="Your password"
+                  ngModel name="password">
+                  <mat-hint>Please enter your password.</mat-hint>
+                  <mat-error>Missing password.</mat-error>
+                </mat-form-field>
+  
+                <button 
+                mat-button 
+                type="submit"
+                >SIGN UP</button>
+  
+              </form>
+              
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </section> -->

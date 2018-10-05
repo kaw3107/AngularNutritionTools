@@ -1,0 +1,134 @@
+<section class="d-none d-lg-block">
+  <div class="row desktop-tools-wrapper">
+    <div class="col-sm-12 col-md-10 col-lg-10">
+      <div class="row">
+      <div class="col-sm-6">
+        <div class="tool-title">
+          <h1>TDEE Calculator</h1>
+        </div>
+        <div class="form-wrapper">
+          <form class="bmr-calculator-form" autocomplete="off" [formGroup]="tdeeForm"
+          (ngSubmit)="onSubmit()">
+
+          <mat-radio-group #genderGroup formControlName="gender">
+            <mat-radio-button style="padding-right: 1.5rem; padding-bottom:2rem;" type="radio" value="m"
+              radioGroup="genderGroup">MALE</mat-radio-button>
+            <mat-radio-button type="radio" value="f" radioGroup="genderGroup">FEMALE</mat-radio-button>
+          </mat-radio-group>
+
+          <mat-form-field class="field-full-width">
+            <input matInput type="number" placeholder="Age" formControlName="age">
+            <span matSuffix>Years &nbsp;</span>
+          </mat-form-field>
+
+          <mat-form-field class="field-full-width">
+            <input matInput type="number" placeholder="Weight" formControlName="weight">
+            <span matSuffix>KG &nbsp;</span>
+          </mat-form-field>
+
+          <mat-form-field class="field-full-width">
+            <input matInput type="number" placeholder="Height" formControlName="height">
+            <span matSuffix>CM &nbsp;</span>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-select #activityGroup formControlName="activities" placeholder="Activity Level">
+              <mat-option selectGroup="#activityGroup" *ngFor="let activity of activities" [value]="activity.value">
+                {{activity.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <br />
+
+          <button mat-button color="accent" type="submit">Calculate</button>
+
+        </form>
+          </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="row result-wrapper" style="padding-left: 1.5rem;" *ngIf="showResult === true">
+                <div style="padding-left: 4.5rem; padding-bottom:2rem;" class="col-sm-12">
+                  <h2>You're TDEE Result:</h2>
+                     <p style="font-size: 1.6rem;">{{tdeeVar}} Calories</p>
+                </div>
+                <div class="col-sm-12">
+                    <div class="result-buttons-panel">
+                        <button mat-button color="primary" (click)="onReturn()">Edit</button>
+                        <button mat-button color="warn" (click)="reset()">Reset</button>
+                      </div>
+                </div>
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="d-block d-lg-none">
+  <div class="row justify-content-center tools-calc-wrapper">
+    <div class="col-12">
+      <div class="row">
+        <div style="padding-bottom: 1rem;" class="col-12">
+          <mat-card class="tools-calc-card animate-pop-in">
+            <mat-card-header>
+              <mat-card-title class="tools-calc-card-title">TDEE Calculator</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <div class="row">
+                <div class="col-sm-12">
+                  <form *ngIf="showResult === false" class="bmr-calculator-form" autocomplete="off" [formGroup]="tdeeForm"
+                    (ngSubmit)="onSubmit()">
+
+                    <mat-radio-group #genderGroup formControlName="gender">
+                      <mat-radio-button style="padding-right: 1.5rem; padding-bottom:2rem;" type="radio" value="m"
+                        radioGroup="genderGroup">MALE</mat-radio-button>
+                      <mat-radio-button type="radio" value="f" radioGroup="genderGroup">FEMALE</mat-radio-button>
+                    </mat-radio-group>
+
+                    <mat-form-field class="field-full-width">
+                      <input matInput type="number" placeholder="Age" formControlName="age">
+                      <span matSuffix>Years &nbsp;</span>
+                    </mat-form-field>
+
+                    <mat-form-field class="field-full-width">
+                      <input matInput type="number" placeholder="Weight" formControlName="weight">
+                      <span matSuffix>KG &nbsp;</span>
+                    </mat-form-field>
+
+                    <mat-form-field class="field-full-width">
+                      <input matInput type="number" placeholder="Height" formControlName="height">
+                      <span matSuffix>CM &nbsp;</span>
+                    </mat-form-field>
+                    <br />
+                    <mat-form-field>
+                      <mat-select #activityGroup formControlName="activities" placeholder="Activity Level">
+                        <mat-option selectGroup="#activityGroup" *ngFor="let activity of activities" [value]="activity.value">
+                          {{activity.viewValue}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                    <br />
+
+                    <button mat-button color="primary" type="submit">Calculate</button>
+
+                  </form>
+                  <div style="padding-left: 1.5rem;" *ngIf="showResult === true" class="row">
+                    <div class="col-sm-12">
+                    <h2>You're TDEE Result:</h2>
+                     <p style="font-size: 1.6rem;">{{tdeeVar}} Calories</p>
+                    </div>
+                </div>
+                <mat-action-row *ngIf="showResult === true" > 
+                  <button mat-button color="primary" (click)="onReturn()">Edit</button>
+                  <button mat-button color="warn" (click)="reset()">Reset</button>
+                  </mat-action-row>
+
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

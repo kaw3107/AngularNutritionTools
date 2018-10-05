@@ -1,0 +1,130 @@
+$secondaryColor:#6E8EC4;
+$overlayTextBlend: rgba(181, 12, 12, 1);
+
+
+//Bootstrap Variables
+$grid-columns:      12;
+$grid-gutter-width-base: 20px;
+
+$grid-gutter-widths: (
+  xs: 10px,
+  sm: 10px,
+  md: $grid-gutter-width-base, // 20px
+  lg: $grid-gutter-width-base, // 20px
+  xl: $grid-gutter-width-base, // 20px
+  xxl: $grid-gutter-width-base // 20px
+);
+
+$grid-breakpoints: (
+  // Extra small screen / phone
+  xs: 0,
+  // Small screen / phone
+  sm: 480px,
+  // Medium screen / tablet
+  md: 768px,
+  // Large screen / desktop (target 1024 screen resolutions)
+  lg: 980px,
+  // Extra large screen / wide desktop (target 1280 screen resolutions)
+  xl: 1220px,
+  // Extra large screen / wide desktop (target 1440 screen resolutions)
+  xxl: 1380px
+);
+
+$container-max-widths: (
+  xs: 312px,
+  sm: 468px,
+  md: 744px,
+  lg: 960px,
+  xl: 1200px,
+  xxl: 1320px
+);
+
+$container-fluid-margin-widths: (
+  xs: 1.25%,
+  sm: 1.25%,
+  md: 1.5625%,
+  lg: 3.125%,
+  xl: 3.125%,
+  xxl: 4.16667%
+);
+
+/* ==========================================================================
+   Variables
+   ========================================================================== */
+// Layout
+$gutter-xxs:          5px;
+$gutter-xs:           10px;
+$gutter-sm: 	        20px;
+$gutter-md: 	        30px;
+$gutter-lg: 	        50px;
+$gutter-xl: 	        75px;
+$gutter-xxl:          100px;
+
+// Colors
+$white:               #FFF;
+$black:               #000;
+$grey-video:          #F5F5F5;  
+$grey-lightest:       #FAFAFA;  
+$grey-lighter:        #EEE;   
+$grey-light:          #DDD;   
+$grey:                #CCC;
+$grey-dark:           #999;
+$grey-darker:         #666;
+$grey-darkest:        #333;
+
+$red:                 #C33;
+$blue:                #39F;
+
+// Type
+$font-family-sans-serif:    "din-condensed-web", "Trebuchet MS", "Arial Narrow", Arial, sans-serif;
+$font-family-serif:         "ff-tisa-web-pro", Palatino," Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+$font-weight-normal:		    400;
+$font-weight-bold: 			    600;
+
+$font-size:                 18px;
+$font-height:               30px;
+$font-size-root:            16px;
+
+$h1-size: 	                42px;
+$h1-height:                 $h1-size * 1;
+
+$h2-size: 	                32px;
+$h2-height:                 $h2-size * 1;
+
+$h3-size: 	                28px;
+$h3-height:                 $h3-size * 1;
+
+$h4-size: 	                24px;
+$h4-height:                 $h4-size * 1;
+
+$h5-size: 	                16px;
+$h5-height:                 $h5-size * 1.1;
+
+$h6-size: 	                10px;
+$h6-height:                 $h6-size * 1.75;
+
+$small-size:                12px;
+$small-height:              $small-size * 1.75;
+
+// Links
+$body-color:            $grey-darkest;
+$link-color:            $red;
+$link-decoration:       none;
+$link-hover-color:      darken($red, 5);
+$link-hover-decoration: underline;
+
+// Sidebar
+$menu-width:            200px;
+
+// Easing
+$ease-linear:           linear;
+$ease-in-out:           ease-in-out; 
+$ease-in-out-back:      cubic-bezier(0.740, -0.315, 0.525, 1.005); 
+$ease-out-quint:        cubic-bezier(0.230, 1.000, 0.320, 1.000); 
+$ease-in-out-quint:     cubic-bezier(0.860, 0.000, 0.070, 1.000);
+$ease-in-out-expo:      cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+
+// Grid
+$enable-flex:             true;
+$grid-columns:            12;
+$grid-gutter-width:       30rem/16;
