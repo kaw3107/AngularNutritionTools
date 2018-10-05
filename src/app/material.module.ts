@@ -23,6 +23,7 @@ import {
   MatStepperModule,
   MatSlideToggleModule,
   MatDividerModule,
+  MatTabNav
 } from '@angular/material';
 
 @NgModule({

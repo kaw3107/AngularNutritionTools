@@ -1,52 +1,53 @@
 @import "src/assets/sass/abstracts/_mixins.scss";
 @import "src/assets/sass/abstracts/_variables.scss";
 @import "src/assets/sass/base/animations.scss";
+@import "src/assets/sass/components/_material.scss";
 
 .animate-pop-in {
-  animation: pop-in .6s cubic-bezier(0, 0.9, 0.3, 1.2) forwards;
+  animation: pop-in 0.6s cubic-bezier(0, 0.9, 0.3, 1.2) forwards;
   opacity: 0;
 }
-.signup-wrapper{
-    .signup-card {
-      max-width: 100%;
-      padding: 4rem;
-      margin-top: 3rem;
-      animation-delay: .8s;
-      .signup-card-title{
-        color: $secondaryColor;
-        font-size: 2.5em;
-      }
 
-      .example-form {
-        min-width: 15rem;
-        max-width: 50rem;
-        width: 100%;
-      }
-      
-      .example-full-width {
-        width: 100%;
-        padding-bottom:1.5rem; 
-        font-size: 1.8rem;
-      }
-  
+.desktop-login-wrapper {
+  .tool-title {
+    padding: 9rem 0rem 5rem 0rem;
+  }
+  .form-wrapper {
+    font-size: 1.6rem;
+
+    .field-full-width {
+      width: 100%;
+      padding-bottom: 1.5rem;
+      display: block;
     }
   }
-
-  .mat-card-header{
-    display: flex;
-    justify-content: center;
-    padding-bottom: 2.5rem;
+}
+.tools-auth-wrapper {
+  .tools-auth-card {
+    max-width: 60%;
+    padding: 5rem;
+    margin-top: 3rem;
+    animation-delay: 0.5s;
+    z-index: 1 !important;
+    @include for-phone-only {
+      max-width: 100%;
+    }
+    .tools-auth-card-title {
+      color: black;
+      font-size: 2.5em;
+      @include for-phone-only {
+        font-size: 1.5rem;
+      }
+    }
   }
-
-  .mat-card-content{
-    display: flex;
-    justify-content: center;
+  .field-full-width {
+    display: block;
+    width: 100%;
+    font-size: 1.3rem;
+    @include for-phone-only {
+      width: 100%;
+      padding-bottom: 1.5rem;
+      font-size: 1.3rem;
+    }
   }
-
-  .mat-card-actions{
-    display: flex;
-    justify-content: center;
-  }
-  .mat-button{
-    font-size: 1.7rem;
-  }
+}

@@ -85,6 +85,5 @@ export class TdeeCalculatorComponent extends MacroCalculatorComponent implements
 
   onReturn() {
     this.showResult = false;
-    this.tdeeForm.reset();
   }
 }

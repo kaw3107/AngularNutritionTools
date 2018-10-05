@@ -26,7 +26,6 @@ import { AboutComponent } from './about/about.component';
 import { BlogComponent } from './blog/blog.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { LoginComponent } from './auth/login/login.component';
-import { SingupFormComponent } from './home/singup-form/singup-form.component';
 import { SharedModule } from './shared/shared.module';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { UserProfileComponent } from './user-dashboard/user-profile/user-profile.component';
@@ -34,6 +33,7 @@ import { SignUpDetailsComponent } from './auth/sign-up/sign-up-details/sign-up-d
 import { FeedCardComponent } from './blog/feed-card/feed-card.component';
 import { CardioTrackerComponent } from './tracking-tools/cardio-tracker/cardio-tracker.component';
 import { TrackingToolsComponent } from './tracking-tools/tracking-tools.component';
+import { AuthHomeComponent } from 'src/app/auth/auth-home/auth-home.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +43,6 @@ import { TrackingToolsComponent } from './tracking-tools/tracking-tools.componen
     BlogComponent,
     SignUpComponent,
     LoginComponent,
-    SingupFormComponent,
     UserProfileComponent,
     SignUpDetailsComponent,
     FeedCardComponent,
@@ -51,6 +50,7 @@ import { TrackingToolsComponent } from './tracking-tools/tracking-tools.componen
     CardioTrackerComponent,
     TrackingToolsComponent,
     UserDashboardComponent,
+    AuthHomeComponent,
   ],
   imports: [
     // BrowserModule,
