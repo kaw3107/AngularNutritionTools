@@ -33,7 +33,7 @@ import { SignUpDetailsComponent } from './auth/sign-up/sign-up-details/sign-up-d
 import { FeedCardComponent } from './blog/feed-card/feed-card.component';
 import { CardioTrackerComponent } from './tracking-tools/cardio-tracker/cardio-tracker.component';
 import { TrackingToolsComponent } from './tracking-tools/tracking-tools.component';
-import { AuthHomeComponent } from 'src/app/auth/auth-home/auth-home.component';
+import { AuthDashboardComponent } from './auth/auth-dashboard/auth-dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,7 +50,7 @@ import { AuthHomeComponent } from 'src/app/auth/auth-home/auth-home.component';
     CardioTrackerComponent,
     TrackingToolsComponent,
     UserDashboardComponent,
-    AuthHomeComponent,
+    AuthDashboardComponent,
   ],
   imports: [
     // BrowserModule,

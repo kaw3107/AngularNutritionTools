@@ -1,4 +1,4 @@
-import { AuthHomeComponent } from 'src/app/auth/auth-home/auth-home.component';
+import { AuthDashboardComponent } from './auth-dashboard/auth-dashboard.component';
 import { AppNavigationComponent } from './../app-navigation/app-navigation.component';
 import { MaterialModule } from './../material.module';
 import { NgModule } from '@angular/core';
@@ -25,7 +25,7 @@ import { SignUpDetailsComponent } from './sign-up/sign-up-details/sign-up-detail
         LoginComponent,
         SignUpDetailsComponent,
         AppNavigationComponent,
-        AuthHomeComponent
+        AuthDashboardComponent
     ],
     exports: [],
 
