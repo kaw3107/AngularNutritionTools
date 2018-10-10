@@ -6,10 +6,11 @@
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <!-- Overlay content -->
     <div class="overlay-content">
-      <a href="#">HOME</a>
-      <a href="#">POSTS</a>
-      <a href="#">TOOLS</a>
-      <a href="#">MY ACCOUNT</a>
+        <a routerLink="/" class="nav-link js-scroll-trigger">HOME</a>
+        <a routerLink="/blog" class="nav-link js-scroll-trigger">POSTS</a>
+        <a routerLink="/tools" class="nav-link js-scroll-trigger">TOOLS</a>
+        <a *ngIf="isAuth === false" routerLink="/auth" class="nav-link js-scroll-trigger">MY ACCOUNT</a>
+        <a *ngIf="isAuth === true" routerLink="/user" class="nav-link js-scroll-trigger">MY ACCOUNT</a>
     </div>
   </div>
   <!-- Use any element to open/show the overlay navigation menu -->

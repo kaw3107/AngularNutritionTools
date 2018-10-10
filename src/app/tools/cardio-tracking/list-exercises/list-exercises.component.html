@@ -1,0 +1,42 @@
+<!-- 
+<button style="margin-left: 2rem;" mat-raised-button color="primary" (click)="openDialog()">
+    <mat-icon aria-label="New Exercise">add</mat-icon>
+</button> -->
+<mat-table class="exercises-table mat-elevation-z8" [dataSource]="dataSource">
+
+    <ng-container matColumnDef="exName">
+        <mat-header-cell *matHeaderCellDef>Exercises Name</mat-header-cell>
+        <mat-cell *matCellDef="let exercise">{{exercise.exerciseName}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="duration">
+        <mat-header-cell *matHeaderCellDef>Duration</mat-header-cell>
+        <mat-cell class="duration-cell"
+                  *matCellDef="let exercise">{{exercise.duration}}</mat-cell>
+
+    </ng-container>
+
+    <ng-container matColumnDef="calories">
+        <mat-header-cell *matHeaderCellDef>Calories</mat-header-cell>
+        <mat-cell class="calories-cell"
+                  *matCellDef="let exercise">{{exercise.calories}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="buttons">
+        <mat-header-cell *matHeaderCellDef>
+            <button mat-button (click)="onDelete(exercise.id)">
+                <mat-icon>add</mat-icon>
+            </button>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let exercise">
+            <button mat-button (click)="onDelete(exercise.id)">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+
+</mat-table>

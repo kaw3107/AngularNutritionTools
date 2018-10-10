@@ -3,6 +3,7 @@ import { UserService } from './user-dashboard/user.service';
 import { AuthGuard } from './auth/auth.guard';
 import { routing } from './routers/app-routing.module';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { FeedService } from 'src/app/blog/feed.service';
 
 
@@ -31,9 +32,8 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
 import { UserProfileComponent } from './user-dashboard/user-profile/user-profile.component';
 import { SignUpDetailsComponent } from './auth/sign-up/sign-up-details/sign-up-details.component';
 import { FeedCardComponent } from './blog/feed-card/feed-card.component';
-import { CardioTrackerComponent } from './tracking-tools/cardio-tracker/cardio-tracker.component';
-import { TrackingToolsComponent } from './tracking-tools/tracking-tools.component';
 import { AuthDashboardComponent } from './auth/auth-dashboard/auth-dashboard.component';
+import { AppNavigationComponent } from './app-navigation/app-navigation.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,10 +47,9 @@ import { AuthDashboardComponent } from './auth/auth-dashboard/auth-dashboard.com
     SignUpDetailsComponent,
     FeedCardComponent,
     StripHtmlTagsPipe,
-    CardioTrackerComponent,
-    TrackingToolsComponent,
     UserDashboardComponent,
     AuthDashboardComponent,
+    AppNavigationComponent,
   ],
   imports: [
     // BrowserModule,
@@ -65,6 +64,7 @@ import { AuthDashboardComponent } from './auth/auth-dashboard/auth-dashboard.com
     AngularFireDatabaseModule,
     SharedModule,
     HttpModule,
+    HttpClientModule
   ],
   providers: [AuthService, UserService, FeedService ],
   bootstrap: [AppComponent]

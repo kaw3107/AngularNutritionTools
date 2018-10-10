@@ -50,6 +50,9 @@
   @include for-tablet-landscape-up {
     padding-left: 19rem !important;
   }
+  @include for-phone-only{
+    height: 100%;
+  }
 
   .verticalAlign {
     @include vertical-align();

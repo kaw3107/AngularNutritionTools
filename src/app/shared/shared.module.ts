@@ -1,4 +1,5 @@
-import { AppNavigationComponent } from './../app-navigation/app-navigation.component';
+
+// import { AppNavigationComponent } from './../app-navigation/app-navigation.component';
 import { TdeeCalculatorComponent } from './../tools/tdee-calculator/tdee-calculator.component';
 import { AuthGuard } from './../auth/auth.guard';
 import { NgModule } from '@angular/core';
@@ -12,7 +13,12 @@ import { MacroCalculatorComponent } from 'src/app/tools/macro-calculator/macro-c
 import { ToolsStartComponent } from 'src/app/tools/tools-start/tools-start.component';
 import { BMRCalculatorComponent } from 'src/app/tools/bmr-calculator/bmr-calculator.component';
 import { ToolsModule } from '../tools/tools.module';
-
+import { CardioTrackingComponent } from '../tools/cardio-tracking/cardio-tracking.component';
+import { ListExercisesComponent } from './../tools/cardio-tracking/list-exercises/list-exercises.component';
+import { AddExerciseComponent } from './../tools/cardio-tracking/add-exercise/add-exercise.component';
+import { Add } from '../tools/cardio-tracking/dialogs/add.dialog/add.dialog.component';
+import { Delete } from '../tools/cardio-tracking/dialogs/delete.dialog/delete.dialog.component';
+import { Edit } from '../tools/cardio-tracking/dialog/edit.dialog/edit.dialog.component';
 
 @NgModule({
   imports: [
@@ -25,21 +31,30 @@ import { ToolsModule } from '../tools/tools.module';
   exports : [
     CommonModule,
     FormsModule,
-    AppNavigationComponent,
+    // AppNavigationComponent,
     CalorieCalculatorComponent,
     MacroCalculatorComponent,
     ToolsStartComponent,
     BMRCalculatorComponent,
-    TdeeCalculatorComponent
+    TdeeCalculatorComponent,
+    ListExercisesComponent,
+    AddExerciseComponent
   ],
   declarations: [
-    AppNavigationComponent,
+    // AppNavigationComponent,
     CalorieCalculatorComponent,
     MacroCalculatorComponent,
     ToolsStartComponent,
     BMRCalculatorComponent,
-    TdeeCalculatorComponent
+    TdeeCalculatorComponent,
+    CardioTrackingComponent,
+    ListExercisesComponent,
+    AddExerciseComponent,
+    Add.DialogComponent,
+    Delete.DialogComponent,
+    Edit.DialogComponent
    ],
+   entryComponents: [AddExerciseComponent],
    providers: [AuthService, AuthGuard],
 })
 export class SharedModule { }
