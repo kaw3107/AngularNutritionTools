@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './edit.dialog.component.html',
   styleUrls: ['./edit.dialog.component.scss']
 })
-export class Edit.DialogComponent implements OnInit {
+export class EditDialogComponent implements OnInit {
 
   constructor() { }
 

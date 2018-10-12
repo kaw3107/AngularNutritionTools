@@ -25,6 +25,7 @@ export class CardioTrackingService {
       .pipe(map((exerciseData) => {
         return exerciseData.exercises.map(exercise => {
           return {
+            dateAdded: exercise.dateAdded,
             exerciseName: exercise.exerciseName,
             duration: exercise.duration,
             calories: exercise.calories,
@@ -42,8 +43,8 @@ export class CardioTrackingService {
     return this.exercisesUpdated.asObservable();
   }
 
-  addExercise(exerciseName: string, duration: string, calories: string) {
-    const exercise: Exercise = {id: null, exerciseName: exerciseName, duration: duration, calories: calories};
+  addExercise(dateAdded: string, exerciseName: string, duration: string, calories: string) {
+    const exercise: Exercise = {id: null, dateAdded: dateAdded, exerciseName: exerciseName, duration: duration, calories: calories};
     this.http.post<{message: string, exerciseId: string}>('http://localhost:3000/api/exercises', exercise)
       .subscribe((responseData) => {
         const exerciseId = responseData.exerciseId;

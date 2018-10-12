@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent},
   { path: 'blog', component: BlogComponent},
-  { path: 'tools',  loadChildren: 'src/app/tools/tools.module#ToolsModule'},
+  { path: 'tools',  loadChildren: 'src/app/tools/tools.module#ToolsModule', outlet: "tools"},
   { path: 'auth/signup', component: SignUpComponent},
   { path: 'auth/signup/details', component: SignUpDetailsComponent},
   { path: 'auth', component: AuthDashboardComponent},

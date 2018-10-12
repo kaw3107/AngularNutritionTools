@@ -34,6 +34,11 @@ import { SignUpDetailsComponent } from './auth/sign-up/sign-up-details/sign-up-d
 import { FeedCardComponent } from './blog/feed-card/feed-card.component';
 import { AuthDashboardComponent } from './auth/auth-dashboard/auth-dashboard.component';
 import { AppNavigationComponent } from './app-navigation/app-navigation.component';
+import { AddDialogComponent } from '../app/tools/cardio-tracking/dialogs/add.dialog/add.dialog.component';
+import { DeleteDialogComponent, } from '../app/tools/cardio-tracking/dialogs/delete.dialog/delete.dialog.component';
+import { EditDialogComponent } from '../app/tools/cardio-tracking/dialogs/edit.dialog/edit.dialog.component';
+import { ListExercisesComponent } from './tools/cardio-tracking/list-exercises/list-exercises.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,6 +55,10 @@ import { AppNavigationComponent } from './app-navigation/app-navigation.componen
     UserDashboardComponent,
     AuthDashboardComponent,
     AppNavigationComponent,
+    AddDialogComponent,
+    DeleteDialogComponent,
+    EditDialogComponent,
+    // ListExercisesComponent
   ],
   imports: [
     // BrowserModule,
@@ -66,6 +75,7 @@ import { AppNavigationComponent } from './app-navigation/app-navigation.componen
     HttpModule,
     HttpClientModule
   ],
+  entryComponents: [ListExercisesComponent, AddDialogComponent],
   providers: [AuthService, UserService, FeedService ],
   bootstrap: [AppComponent]
 })

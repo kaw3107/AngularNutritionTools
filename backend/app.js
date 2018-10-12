@@ -33,6 +33,7 @@ app.use((req, res, next) => {
 
 app.post("/api/exercises", (req, res, next) => {
   const exercise = new Exercise({
+    dateAdded: req.body.dateAdded,
     exerciseName: req.body.exerciseName,
     duration: req.body.duration,
     calories: req.body.calories

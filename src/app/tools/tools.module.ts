@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from './../material.module';
-import { AddExerciseComponent } from './cardio-tracking/add-exercise/add-exercise.component';
 import { ListExercisesComponent } from './cardio-tracking/list-exercises/list-exercises.component';
 
 @NgModule({

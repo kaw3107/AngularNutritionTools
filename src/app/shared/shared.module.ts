@@ -15,10 +15,6 @@ import { BMRCalculatorComponent } from 'src/app/tools/bmr-calculator/bmr-calcula
 import { ToolsModule } from '../tools/tools.module';
 import { CardioTrackingComponent } from '../tools/cardio-tracking/cardio-tracking.component';
 import { ListExercisesComponent } from './../tools/cardio-tracking/list-exercises/list-exercises.component';
-import { AddExerciseComponent } from './../tools/cardio-tracking/add-exercise/add-exercise.component';
-import { Add } from '../tools/cardio-tracking/dialogs/add.dialog/add.dialog.component';
-import { Delete } from '../tools/cardio-tracking/dialogs/delete.dialog/delete.dialog.component';
-import { Edit } from '../tools/cardio-tracking/dialog/edit.dialog/edit.dialog.component';
 
 @NgModule({
   imports: [
@@ -26,7 +22,7 @@ import { Edit } from '../tools/cardio-tracking/dialog/edit.dialog/edit.dialog.co
     routing,
     MaterialModule,
     ReactiveFormsModule,
-    ToolsModule
+    ToolsModule,
   ],
   exports : [
     CommonModule,
@@ -38,7 +34,6 @@ import { Edit } from '../tools/cardio-tracking/dialog/edit.dialog/edit.dialog.co
     BMRCalculatorComponent,
     TdeeCalculatorComponent,
     ListExercisesComponent,
-    AddExerciseComponent
   ],
   declarations: [
     // AppNavigationComponent,
@@ -49,12 +44,8 @@ import { Edit } from '../tools/cardio-tracking/dialog/edit.dialog/edit.dialog.co
     TdeeCalculatorComponent,
     CardioTrackingComponent,
     ListExercisesComponent,
-    AddExerciseComponent,
-    Add.DialogComponent,
-    Delete.DialogComponent,
-    Edit.DialogComponent
    ],
-   entryComponents: [AddExerciseComponent],
+   entryComponents: [ListExercisesComponent],
    providers: [AuthService, AuthGuard],
 })
 export class SharedModule { }

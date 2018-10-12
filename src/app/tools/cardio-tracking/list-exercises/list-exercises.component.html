@@ -4,6 +4,11 @@
 </button> -->
 <mat-table class="exercises-table mat-elevation-z8" [dataSource]="dataSource">
 
+    <ng-container matColumnDef="dateAdded">
+        <mat-header-cell *matHeaderCellDef>Date Added</mat-header-cell>
+        <mat-cell *matCellDef="let exercise">{{exercise.dateAdded}}</mat-cell>
+    </ng-container>
+
     <ng-container matColumnDef="exName">
         <mat-header-cell *matHeaderCellDef>Exercises Name</mat-header-cell>
         <mat-cell *matCellDef="let exercise">{{exercise.exerciseName}}</mat-cell>
@@ -12,24 +17,34 @@
     <ng-container matColumnDef="duration">
         <mat-header-cell *matHeaderCellDef>Duration</mat-header-cell>
         <mat-cell class="duration-cell"
-                  *matCellDef="let exercise">{{exercise.duration}}</mat-cell>
+                  *matCellDef="let exercise">{{exercise.duration}} minutes </mat-cell>
 
     </ng-container>
 
     <ng-container matColumnDef="calories">
         <mat-header-cell *matHeaderCellDef>Calories</mat-header-cell>
         <mat-cell class="calories-cell"
-                  *matCellDef="let exercise">{{exercise.calories}}</mat-cell>
+                  *matCellDef="let exercise">{{exercise.calories}} kcal</mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="buttons">
         <mat-header-cell *matHeaderCellDef>
-            <button mat-button (click)="onDelete(exercise.id)">
+            <button mat-button (click)="addNew()">
                 <mat-icon>add</mat-icon>
             </button>
         </mat-header-cell>
         <mat-cell *matCellDef="let exercise">
             <button mat-button (click)="onDelete(exercise.id)">
+                <mat-icon>edit</mat-icon>
+            </button>
+        </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="deleteBtns">
+        <mat-header-cell *matHeaderCellDef>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let exercise">
+            <button mat-button color = warn (click)="onDelete(exercise.id)">
                 <mat-icon>delete</mat-icon>
             </button>
         </mat-cell>
