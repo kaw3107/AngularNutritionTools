@@ -12,6 +12,7 @@ import { Exercise } from './../../models/exercises.model';
 export class CardioTrackingService {
   private exercises: Exercise[] = [];
   private exercisesUpdated = new Subject<Exercise[]>();
+  idStore: string;
 
   constructor(private http: HttpClient) {
 
@@ -39,6 +40,11 @@ export class CardioTrackingService {
       });
   }
 
+  getExercise(id: string) {
+    this.idStore = id;
+    return {...this.exercises.find(e => e.id === id)}
+  }
+
   getExerciseUpdateListener() {
     return this.exercisesUpdated.asObservable();
   }
@@ -51,6 +57,26 @@ export class CardioTrackingService {
         exercise.id = exerciseId;
         this.exercises.push(exercise);
         this.exercisesUpdated.next([...this.exercises]);
+      });
+  }
+
+  // updateExercise(exerciseId: string, exerciseName: string, duration: string, calories: string) {
+  //   const exercise: Exercise = {id: exerciseId, exerciseName: exerciseName, duration: duration, calories: calories};
+  //   this.http.put('http://localhost:3000/api/exercises/' + exerciseId, exercise).
+  //   subscribe(response => console.log(response));
+  // }
+
+  updateExercise(id: string, dateAdded: string, exerciseName: string, duration: string, calories: string) {
+    const exercise: Exercise = { id: id, dateAdded: dateAdded, exerciseName: exerciseName, duration: duration, calories: calories };
+    this.http
+      .patch("http://localhost:3000/api/exercises/" + id, exercise)
+      .subscribe(response => {
+        const updatedExercises = [...this.exercises];
+        const oldExerciseIndex = updatedExercises.findIndex(e => e.id === exercise.id);
+        updatedExercises[oldExerciseIndex] = exercise;
+        this.exercises = updatedExercises;
+        this.exercisesUpdated.next([...this.exercises]);
+        // this.router.navigate(["/"]);
       });
   }
 

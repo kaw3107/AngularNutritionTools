@@ -9,6 +9,8 @@ import { Injectable } from '@angular/core';
 import { ValidatorService } from 'angular4-material-table';
 import { FormGroup, FormControl, NgForm, Validators } from '@angular/forms';
 import {AddDialogComponent} from '../dialogs/add.dialog/add.dialog.component';
+import {EditDialogComponent} from '../dialogs/edit.dialog/edit.dialog.component';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-list-exercises',
@@ -20,8 +22,13 @@ export class ListExercisesComponent implements OnInit, OnDestroy {
   private exerciseSub: Subscription;
   dataSource = new ExerciseDataSource(this.cardioTrackingService);
   displayedColumns = ['dateAdded','exName', 'duration', 'calories', 'buttons', 'deleteBtns'];
+  exercise: Exercise;
+  private id: string;
 
-  constructor(public cardioTrackingService: CardioTrackingService, public dialog: MatDialog) { }
+  constructor(
+    public cardioTrackingService: CardioTrackingService,
+    public dialog: MatDialog,
+    public route: ActivatedRoute) { }
 
   ngOnInit() {
     this.cardioTrackingService.getExercises();
@@ -37,6 +44,20 @@ export class ListExercisesComponent implements OnInit, OnDestroy {
 
   onDelete(exerciseId: string) {
     this.cardioTrackingService.deleteExercise(exerciseId);
+  }
+
+  onEdit(exerciseId: string, exerciseName: string, duration: string, calories: string) {
+    this.id = exerciseId;
+    this.exercise = this.cardioTrackingService.getExercise(this.id);
+    const dialogRef = this.dialog.open(EditDialogComponent, {
+      data: {
+        id: this.exercise.id,
+        dateAdded: this.exercise.dateAdded,
+        exerciseName: this.exercise.exerciseName,
+        duration: this.exercise.duration,
+        calories: this.exercise.calories
+      }
+    });
   }
 
   addNew(exercise: Exercise) {

@@ -8,9 +8,10 @@ import { AuthGuard } from './../auth/auth.guard';
 
 export const routes: Routes = [
   { path: 'tools', component: ToolsStartComponent, canActivate: [AuthGuard]}, // default route of the module
-  { path: 'calories-calculator', component: CalorieCalculatorComponent, canActivate: [AuthGuard] },
-  { path: 'macro-calculator', component: MacroCalculatorComponent, canActivate: [AuthGuard] },
-  { path: 'bmr-calculator', component: BMRCalculatorComponent, canActivate: [AuthGuard]}
+  { path: 'tools/:exerciseId', component: ToolsStartComponent, canActivate: [AuthGuard]},
+  // { path: 'calories-calculator', component: CalorieCalculatorComponent, canActivate: [AuthGuard] },
+  // { path: 'macro-calculator', component: MacroCalculatorComponent, canActivate: [AuthGuard] },
+  // { path: 'bmr-calculator', component: BMRCalculatorComponent, canActivate: [AuthGuard]}
 ];
 
 export const appRoutingProviders: any[] = [

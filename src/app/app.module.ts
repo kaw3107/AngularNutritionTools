@@ -75,7 +75,7 @@ import { ListExercisesComponent } from './tools/cardio-tracking/list-exercises/l
     HttpModule,
     HttpClientModule
   ],
-  entryComponents: [ListExercisesComponent, AddDialogComponent],
+  entryComponents: [ListExercisesComponent, AddDialogComponent, EditDialogComponent],
   providers: [AuthService, UserService, FeedService ],
   bootstrap: [AppComponent]
 })
