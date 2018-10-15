@@ -7,11 +7,11 @@ import { ModuleWithProviders } from '@angular/core';
 import { AuthGuard } from './../auth/auth.guard';
 
 export const routes: Routes = [
-  { path: 'tools', component: ToolsStartComponent, canActivate: [AuthGuard]}, // default route of the module
-  { path: 'tools/:exerciseId', component: ToolsStartComponent, canActivate: [AuthGuard]},
-  // { path: 'calories-calculator', component: CalorieCalculatorComponent, canActivate: [AuthGuard] },
-  // { path: 'macro-calculator', component: MacroCalculatorComponent, canActivate: [AuthGuard] },
-  // { path: 'bmr-calculator', component: BMRCalculatorComponent, canActivate: [AuthGuard]}
+  { path: 'tools', component: ToolsStartComponent}, // default route of the module
+  { path: 'tools/:exerciseId', component: ToolsStartComponent},
+  { path: 'calories-calculator', component: CalorieCalculatorComponent},
+  { path: 'macro-calculator', component: MacroCalculatorComponent},
+  { path: 'bmr-calculator', component: BMRCalculatorComponent}
 ];
 
 export const appRoutingProviders: any[] = [

@@ -1,18 +1,20 @@
-<nav>
+<!-- Hide this element on desktop-->
+<div class="d-block d-lg-block nav-container">
+    <!-- Use any element to open/show the overlay navigation menu -->
+    <span class="logo">KWF</span>
+    <span class="fa fa-bars hamburger" onclick="openNav()"></span>
   <!-- The overlay -->
   <div id="myNav" class="overlay">
     <!-- Button to close the overlay navigation -->
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <!-- Overlay content -->
     <div class="overlay-content">
-        <a routerLink="/" class="nav-link js-scroll-trigger">HOME</a>
-        <a routerLink="/blog" class="nav-link js-scroll-trigger">POSTS</a>
-        <a routerLink="/tools" class="nav-link js-scroll-trigger">TOOLS</a>
-        <a *ngIf="isAuth === false" routerLink="/auth" class="nav-link js-scroll-trigger">MY ACCOUNT</a>
-        <a *ngIf="isAuth === true" routerLink="/user" class="nav-link js-scroll-trigger">MY ACCOUNT</a>
+        <a routerLink="/" class="nav-link js-scroll-trigger" onclick="closeNav()">HOME</a>
+        <a routerLink="/blog" class="nav-link js-scroll-trigger" onclick="closeNav()">POSTS</a>
+        <a routerLink="/tools" class="nav-link js-scroll-trigger" onclick="closeNav()">TOOLS</a>
+        <a *ngIf="isAuth === false" routerLink="/auth" class="nav-link js-scroll-trigger" onclick="closeNav()">MY ACCOUNT</a>
+        <a *ngIf="isAuth === true" routerLink="/user" class="nav-link js-scroll-trigger" onclick="closeNav()">MY ACCOUNT</a>
     </div>
   </div>
-  <!-- Use any element to open/show the overlay navigation menu -->
-  <span class="logo">KWF</span>
-  <span class="fa fa-bars hamburger" onclick="openNav()"></span>
-</nav>
+
+</div>
