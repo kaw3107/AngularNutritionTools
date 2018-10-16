@@ -67,7 +67,7 @@
         <span class="suffix" matSuffix>CM &nbsp;</span>
 
         <mat-form-field>
-          <mat-select #activityGroup [(ngModel)]="selectedValue" formControlName="activities" [placeholder]='initActivity' (ngModelChange)="onSubmit()">
+          <mat-select #activityGroup [(value)] = "selected" [(ngModel)]="selectedValue" formControlName="activities" [placeholder]='initActivity' (ngModelChange)="onSubmit()">
             <mat-option selectGroup="#activityGroup" *ngFor="let activity of activities" [value]="activity.value">
               {{activity.viewValue}}
             </mat-option>

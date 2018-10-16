@@ -10,7 +10,6 @@ import { routing } from './../routers/tools-routing.module';
 import { MaterialModule } from './../material.module';
 import { CalorieCalculatorComponent } from 'src/app/tools/calorie-calculator/calorie-calculator.component';
 import { MacroCalculatorComponent } from 'src/app/tools/macro-calculator/macro-calculator.component';
-import { ToolsStartComponent } from 'src/app/tools/tools-start/tools-start.component';
 import { BMRCalculatorComponent } from 'src/app/tools/bmr-calculator/bmr-calculator.component';
 import { ToolsModule } from '../tools/tools.module';
 import { CardioTrackingComponent } from '../tools/cardio-tracking/cardio-tracking.component';
@@ -30,7 +29,6 @@ import { ListExercisesComponent } from './../tools/cardio-tracking/list-exercise
     // AppNavigationComponent,
     CalorieCalculatorComponent,
     MacroCalculatorComponent,
-    ToolsStartComponent,
     BMRCalculatorComponent,
     TdeeCalculatorComponent,
     ListExercisesComponent,
@@ -39,7 +37,6 @@ import { ListExercisesComponent } from './../tools/cardio-tracking/list-exercise
     // AppNavigationComponent,
     CalorieCalculatorComponent,
     MacroCalculatorComponent,
-    ToolsStartComponent,
     BMRCalculatorComponent,
     TdeeCalculatorComponent,
     CardioTrackingComponent,
