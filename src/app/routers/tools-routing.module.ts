@@ -1,17 +1,17 @@
-import { ToolsStartComponent } from './../tools/tools-start/tools-start.component';
+
 import { MacroCalculatorComponent } from 'src/app/tools/macro-calculator/macro-calculator.component';
 import { CalorieCalculatorComponent } from './../tools/calorie-calculator/calorie-calculator.component';
 import { BMRCalculatorComponent } from 'src/app/tools/bmr-calculator/bmr-calculator.component';
 import { Routes, RouterModule } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
 import { AuthGuard } from './../auth/auth.guard';
+import { TdeeCalculatorComponent } from '../tools/tdee-calculator/tdee-calculator.component';
 
 export const routes: Routes = [
-  { path: 'tools', component: ToolsStartComponent}, // default route of the module
-  { path: 'tools/:exerciseId', component: ToolsStartComponent},
   { path: 'calories-calculator', component: CalorieCalculatorComponent},
   { path: 'macro-calculator', component: MacroCalculatorComponent},
-  { path: 'bmr-calculator', component: BMRCalculatorComponent}
+  { path: 'bmr-calculator', component: BMRCalculatorComponent},
+  { path: 'tdee-calculator', component: TdeeCalculatorComponent}
 ];
 
 export const appRoutingProviders: any[] = [

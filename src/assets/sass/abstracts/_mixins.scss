@@ -5,6 +5,9 @@
 @mixin for-phone-only-landscape {
   @media (min-width: 481px) and (max-width: 767px) { @content; }
 }
+@mixin  for-phone-to-tablet-portrait {
+  @media (max-width:900px) {@content;}
+}
 @mixin for-tablet-portrait-up {
   @media (min-width: 768px) { @content; }
 }
@@ -25,6 +28,13 @@
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+@mixin vertical-align-bottom($position: relative) {
+  position: $position;
+  top: 90%;
+  -webkit-transform: translateY(-90%);
+  -ms-transform: translateY(-90%);
+  transform: translateY(-90%);
 }
 
 @mixin opacityOverlay{

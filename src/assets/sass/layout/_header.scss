@@ -3,30 +3,39 @@
 @import "src/assets/sass/abstracts/_variables.scss";
 
 .app-home-header {
-  height: 85vh;
+  height: 100%;
   z-index: 0;
+  @include for-tablet-portrait-up {
+   height: 85vh;
+  }
 }
 
   .app-home-header-img{
     height: 100%;
     width: 100%;
     background-color: #000000;
-    opacity: 1;
     z-index: 0;
   }
 
 .home-content-wrapper{
   padding-top:7rem !important;
   max-width:85rem;
-  min-width:25rem;
   margin:0 auto !important;
   font-family: 'Lato', sans-serif;
-}
+  @include for-phone-to-tablet-portrait {
+    padding-left: 2.5rem !important;
+    padding-right: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
 
   .row-header {
     color:white;
     font-weight: bold;
     font-size: 3.6rem;
+    padding: 1rem;
+     @include for-phone-only {
+       font-size: 2.8rem;
+     }
   }
 
 .content-container{
@@ -34,68 +43,33 @@
   color:white;
   padding-top: 3rem;
 
-h3 {
-  padding-top:.3rem;
-  padding-bottom: .3rem; 
-}
-
-.element-1 {
+.element {
   border-top:4px solid gold;
   word-break: break-word;
+  @include for-phone-to-tablet-portrait {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 1rem;
+  }
+
+  h3 {
+    padding-top:.3rem;
+    padding-bottom: .8rem; 
+  }
   .element-content {
     font-size: 1.3rem;
-    color: darkgrey;
-    
+    color: darkgrey;  
+    @include for-phone-only {
+      font-size: 1.15rem;
+    }
   }
   .button {
     color: white;
     text-decoration: none;
     &:hover {
       color: gold;
-    }
+        }
+      }
+    } 
   }
-}
-  .element-2 {
-    border-top:4px solid gold;
-    .element-content {
-      font-size: 1.3rem;
-      color: darkgrey;
-    }
-    .button {
-      color: white;
-      text-decoration: none;
-      &:hover {
-        color: gold;
-      }
-    }
-  }
-    .element-3 {
-      border-top:4px solid gold;
-      .element-content {
-        font-size: 1.3rem;
-        color: darkgrey;
-      }
-      .button {
-        color: white;
-        text-decoration: none;
-        &:hover {
-          color: gold;
-        }
-      }
-    }
-      .element-4 {
-        border-top:4px solid gold;
-        .element-content {
-          font-size: 1.3rem;
-          color: darkgrey;
-        }
-        .button {
-          color: white;
-          text-decoration: none;
-          &:hover {
-            color: gold;
-          }
-        }
-      }
-    }
-
+} 

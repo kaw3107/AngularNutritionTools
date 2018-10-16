@@ -57,6 +57,9 @@
   cursor: pointer;
   z-index: 98;
   color: white;
+  &:hover {
+    color: gold;
+  }
 }
 .logo {
   border: white .6rem solid;

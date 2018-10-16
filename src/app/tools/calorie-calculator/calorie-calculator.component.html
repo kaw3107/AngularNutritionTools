@@ -1,4 +1,80 @@
-<section class="d-none d-lg-block">
+<div class="desktop-tools-wrapper">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-5">
+      <div class="tool-title">
+        <h1>Macro to calories converter</h1>
+      </div>
+      <div class="form-wrapper">
+        <form 
+        class="bmr-calculator-form" 
+        autocomplete="off" 
+        [formGroup]="caloriesForm" 
+        (ngSubmit)="onSubmit()">
+
+        <span class="suffix" MatPrefix>Carbs(g): &nbsp;</span>
+          <mat-slider
+          thumbLabel
+          formControlName="carbs"
+          tickInterval="auto"
+          step ="1"
+          min="1"
+          max="500" 
+          (ngModelChange)="onSubmit()">
+        </mat-slider> 
+
+        <span class="suffix" MatPrefix>Fats(g): &nbsp;</span>
+          <mat-slider
+          thumbLabel
+          formControlName="fats"
+          tickInterval="auto"
+          step ="1"
+          min="1"
+          max="500"
+          (ngModelChange)="onSubmit()">
+        </mat-slider> 
+
+        <span class="suffix" MatPrefix>Protein(g): &nbsp;</span>
+          <mat-slider
+          thumbLabel
+          formControlName="protein"
+          tickInterval="auto"
+          step ="1"
+          min="1"
+          max="500"
+          (ngModelChange)="onSubmit()">
+        </mat-slider> 
+
+
+          <!-- <button mat-button color="accent" type="submit">Calculate</button> -->
+
+        </form>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-7">
+          <div class="card result-card">
+              <div class="card-body">
+                <div class="row result-wrapper" style="padding-left: 1.5rem;">
+                  <div style="padding-left: 1.5rem; padding-bottom:2rem; padding-top:2rem;" class="col-sm-12">
+                    <h2>You're Macronutrients Converted:</h2>
+                    <p style="font-size: 1.3rem;">Carbs: {{carbVar}}g</p>
+                    <p style="font-size: 1.3rem;">Fats: {{fatVar}}g</p>
+                    <p style="font-size: 1.3rem;">Protein: {{proteinVar}}g</p>
+                    <p style="font-size: 1.3rem;">Total Calories: {{caloriesVar}} Kcal</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- <section class="d-none d-lg-block">
   <div class="row desktop-tools-wrapper">
     <div class="col-sm-12 col-md-10 col-lg-10">
       <div class="row">
@@ -49,61 +125,4 @@
       </div>
     </div>
   </div>
-</section>
-
-
-<section class="d-block d-lg-none">
-  <div class="row justify-content-center tools-calc-wrapper">
-    <div class="col-12">
-      <div class="row">
-        <div style="padding-bottom: 1rem;" class="col-12">
-          <mat-card class="tools-calc-card animate-pop-in">
-            <mat-card-header>
-              <mat-card-title class="tools-calc-card-title">Calorie Calculator</mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-              <div class="row">
-                <div class="col-12">
-                  <form class="calorie-calculator-form" *ngIf="showResult === false" autocomplete="off" [formGroup]="caloriesForm"
-                    (ngSubmit)="onSubmit()">
-
-                    <mat-form-field class="field-full-width">
-                      <input matInput color="primary" type="number" placeholder="Carbohydrates" formControlName="carbs">
-                      <span matSuffix>grams &nbsp;</span>
-                      <mat-error>Invalid or missing email.</mat-error>
-                    </mat-form-field>
-
-                    <mat-form-field class="field-full-width">
-                      <input matInput color="primary" type="number" placeholder="Fats" formControlName="fats">
-                      <span matSuffix>grams &nbsp;</span>
-                      <mat-error>Missing password.</mat-error>
-                    </mat-form-field>
-
-                    <mat-form-field class="field-full-width">
-                      <input matInput color="primary" type="number" placeholder="Protein" formControlName="protein">
-                      <span matSuffix>grams &nbsp;</span>
-                      <mat-error>Missing password.</mat-error>
-                    </mat-form-field>
-
-                    <button mat-button color="accent" type="submit">Calculate</button>
-
-                  </form>
-                  <div style="padding-left: 1.5rem;" *ngIf="showResult === true" class="row">
-                    <div class="col-xs-12">
-                      <h2>Total Calorie Intake:</h2>
-                      <p style="font-size: 1.6rem;">{{caloriesVar}} Calories</p>
-                    </div>
-                  </div>
-                  <mat-action-row *ngIf="showResult === true">
-                    <button mat-button color="primary" (click)="onReturn()">Edit</button>
-                    <button mat-button color="warn" (click)="reset()">Reset</button>
-                  </mat-action-row>
-                </div>
-              </div>
-            </mat-card-content>
-          </mat-card>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+</section> -->

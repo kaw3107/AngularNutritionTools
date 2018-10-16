@@ -9,11 +9,32 @@
 }
 
 .desktop-tools-wrapper {
+  height: 85vh;
+  z-index: 0;
+  background-color: $black;
+  color: white;
+  padding-left: 5rem;
+  @include for-phone-only {
+   height: 100%;
+   padding-bottom: 10rem;
+   padding-left: 0;
+  }
+  @include for-phone-to-tablet-portrait {
+    height: 100%;
+    padding-bottom: 10rem;
+  }
   .tool-title {
     padding: 6rem 0rem 5rem 0rem;
   }
   .form-wrapper {
     font-size: 1.6rem;
+    mat-slider {
+      width: 85%;
+      font-size: .5rem;
+    }
+    .suffix {
+      display: inline;
+    }
 
     .field-full-width {
       width: 90%;
@@ -21,36 +42,20 @@
       display: block;
     }
   }
-  .result-wrapper {
-    @include vertical-align();
-  }
-}
-.tools-calc-wrapper {
-  .tools-calc-card {
-    max-width: 60%;
-    padding: 5rem;
-    margin-top: 3rem;
-    animation-delay: 0.5s;
-    z-index: 1 !important;
-    @include for-phone-only {
-      max-width: 100%;
-    }
-    .tools-calc-card-title {
-      color: black;
-      font-size: 2.5em;
-      @include for-phone-only {
-        font-size: 1.5rem;
-      }
-    }
-  }
-  .field-full-width {
-    display: block;
-    width: 100%;
-    font-size: 1.3rem;
-    @include for-phone-only {
-      width: 100%;
-      padding-bottom: 1.5rem;
+  .result-card {
+    height: 82%;
+    max-width: 400px;
+    margin: 0 auto;
+    border-top: solid gold 4px;
+    background-color: black;
+    margin-top: 2rem;
+    @include vertical-align-bottom();
+    p {
       font-size: 1.3rem;
+      color: darkgrey;
+    }
+    h2 {
+      padding-bottom: 2rem;
     }
   }
 }

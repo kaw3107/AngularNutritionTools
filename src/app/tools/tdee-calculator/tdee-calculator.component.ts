@@ -32,7 +32,11 @@ export class TdeeCalculatorComponent extends MacroCalculatorComponent implements
   tdeeVar = 0;
   goalVar = '';
   genderVar = '';
-  activityVar = '';
+  genderStore = '';
+  activityVar = '1';
+  activityStore = '';
+  initActivity = 'Sedentary';
+  selectedValue: string;
   weightVar = 0;
   ageVar = 0;
   heightVar = 0;
@@ -42,14 +46,24 @@ export class TdeeCalculatorComponent extends MacroCalculatorComponent implements
    }
 
   ngOnInit() {
+    this.genderStore = 'Male';
+    this.activityStore = 'Sedentary';
+    if (this.activityVar !== '1' || '2' || '3' || '4') {
+      this.activityVar = '1';
+
+    }
   }
 
   onSubmit() {
+    this.valueConverter();
+
     this.genderVar = this.tdeeForm.controls['gender'].value;
     this.activityVar = this.tdeeForm.controls['activities'].value;
     this.heightVar = this.tdeeForm.controls['height'].value;
     this.weightVar = this.tdeeForm.controls['weight'].value;
     this.ageVar = this.tdeeForm.controls['age'].value;
+
+    console.log(this.activityVar);
 
     super.setGender(this.genderVar);
     super.setAge(this.ageVar);
@@ -83,7 +97,33 @@ export class TdeeCalculatorComponent extends MacroCalculatorComponent implements
 
   }
 
-  onReturn() {
-    this.showResult = false;
+  valueConverter() {
+    if (this.genderVar === '') {
+      this.genderVar = 'm'
+    }
+    if (this.genderVar === 'm') {
+      this.genderStore = 'Male';
+    } else if (this.genderVar === 'f') {
+      this.genderStore = 'Female';
+    }
+
+    switch(this.activityVar) { 
+      case "1": { 
+         this.activityStore = 'Sedentary';
+         break; 
+      } 
+      case "2": { 
+        this.activityStore = 'Light Physical Activity';
+         break; 
+      } 
+      case "3": {
+        this.activityStore = 'Moderate Physical Activity';
+         break;    
+      } 
+      case "4": { 
+         this.activityStore = 'Vigorous Physical Activity';
+         break; 
+      }  
+    }
   }
 }
