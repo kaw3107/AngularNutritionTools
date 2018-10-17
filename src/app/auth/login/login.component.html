@@ -10,6 +10,7 @@
           <form 
           class="bmr-ca"
           [formGroup]="loginForm"
+          autocomplete="off"
           (ngSubmit)="onSubmit()">
 
             <mat-form-field class="field-full-width">
@@ -17,7 +18,8 @@
               matInput 
               type="email"
               placeholder="Your email"
-              formControlName="email">
+              formControlName="email"
+              color = "accent">
               <mat-hint>Please enter a valid email.</mat-hint>
                <mat-error>Invalid or missing email.</mat-error>
             </mat-form-field>
@@ -35,6 +37,7 @@
             <button 
             mat-button 
             type="submit"
+            color = "accent"
             [disabled]="loginForm.invalid">SIGN IN</button>
 
           </form>

@@ -29,18 +29,18 @@ export class TdeeCalculatorComponent extends MacroCalculatorComponent implements
     { value: '4', viewValue: 'Vigorous Physical Activity' },
   ];
 
-  tdeeVar = 0;
-  goalVar = '';
-  genderVar = '';
-  genderStore = '';
-  activityVar: '';
-  activityStore = '';
-  selectedValue: = '';
-  selected = '';
-  weightVar = 0;
-  ageVar = 0;
-  heightVar = 0;
-  bmrVar = 0;
+  tdeeVar: number;
+  goalVar: string;
+  genderVar: string;
+  genderStore: string;
+  activityVar: string;
+  activityStore: string;
+  selectedValue: string;
+  selected: string;
+  weightVar: number;
+  ageVar: number;
+  heightVar: number;
+  bmrVar: number;
   constructor() {
     super();
    }
@@ -59,7 +59,6 @@ export class TdeeCalculatorComponent extends MacroCalculatorComponent implements
     this.weightVar = this.tdeeForm.controls['weight'].value;
     this.ageVar = this.tdeeForm.controls['age'].value;
 
-    console.log(this.activityVar);
     this.valueConverter();
 
     super.setGender(this.genderVar);
@@ -70,26 +69,6 @@ export class TdeeCalculatorComponent extends MacroCalculatorComponent implements
 
     // super.onSubmit();
     this.tdeeVar = super.onCallTdee();
-  }
-
-  reset() {
-    this.tdeeVar = 0;
-    this.goalVar = '';
-    this.genderVar = '';
-    this.activityVar = '';
-    this.weightVar = 0;
-    this.ageVar = 0;
-    this.heightVar = 0;
-    this.bmrVar = 0;
-
-    super.setGender(this.genderVar);
-    super.setAge(this.ageVar);
-    super.setWeight(this.weightVar);
-    super.setHeight(this.heightVar);
-    super.setActivity(this.activityVar);
-
-    this.showResult = false;
-
   }
 
   valueConverter() {
@@ -103,11 +82,11 @@ export class TdeeCalculatorComponent extends MacroCalculatorComponent implements
     }
 
     switch(this.activityVar) { 
-      case "1": { 
+      case '1': { 
          this.activityStore = 'Sedentary';
          break; 
       } 
-      case "2": { 
+      case '2': { 
         this.activityStore = 'Light Physical Activity';
          break; 
       } 
