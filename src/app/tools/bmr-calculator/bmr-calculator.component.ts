@@ -7,7 +7,6 @@ import { FormGroup, FormControl, NgForm } from '@angular/forms';
   styleUrls: ['./bmr-calculator.component.scss']
 })
 export class BMRCalculatorComponent implements OnInit {
-  showResult = false;
   bmrForm = new FormGroup({
   weight: new FormControl(0),
   height: new FormControl(0),
@@ -17,6 +16,7 @@ export class BMRCalculatorComponent implements OnInit {
 
   bmrVar = 0;
   genderVar = '';
+  genderStore = '';
   weightVar = 0;
   ageVar = 0;
   heightVar = 0;
@@ -24,6 +24,19 @@ export class BMRCalculatorComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.genderStore = 'Male';
+  }
+
+  formatLabel(value: number | null) {
+    if (!value) {
+      return 0;
+    }
+
+    if (value >= 30 && value <= 210) {
+      return value  ;
+    }
+
+    return value;
   }
 
   onSubmit() {
@@ -32,8 +45,16 @@ export class BMRCalculatorComponent implements OnInit {
     this.ageVar = this.bmrForm.controls['age'].value;
     this.heightVar = this.bmrForm.controls['height'].value;
 
+    if (this.genderVar === '') {
+      this.genderVar = 'm'
+    }
+
+    if (this.genderVar === 'm') {
+      this.genderStore = 'Male';
+    } else if (this.genderVar === 'f') {
+      this.genderStore = 'Female';
+    }
     this.calcBMR();
-    this.showResult = true;
   }
 
   calcBMR() {
@@ -62,12 +83,6 @@ export class BMRCalculatorComponent implements OnInit {
     this.ageVar = 0;
     this.heightVar = 0;
     this.bmrForm.reset();
-    this.showResult = false;
 
   }
-
-  onReturn() {
-    this.showResult = false;
-  }
-
 }

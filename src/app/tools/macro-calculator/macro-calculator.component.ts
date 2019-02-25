@@ -30,47 +30,51 @@ export class MacroCalculatorComponent implements OnInit {
     { value: '4', viewValue: 'Vigorous Physical Activity' },
   ];
 
-  macroVar = 0;
-  goalVar = '';
-  genderVar = '';
-  activityVar = '';
-  weightVar = 0;
-  ageVar = 0;
-  heightVar = 0;
-  bmrVar = 0;
-  tdeeVar = 0;
+  macroVar: number;
+  goalVar: string;
+  goalStore: string;
+  genderVar: string;
+  genderStore: string;
+  activityVar: string;
+  activityStore: string;
+  selectedValue: string;
+  weightVar: number;
+  ageVar: number;
+  heightVar: number;
+  bmrVar: number;
+  tdeeVar: number;
   proteinMultiplier = 0.9;
   fatMultiplier = 0.35;
 
+// Need to refactor and make a model for the below... Low priority
+  kcalCut1: string;
+  proteinCut1: string;
+  carbCut1 = '0';
+  fatCut1: string;
+  lossPWCut1: string;
 
-  kcalCut1 = '';
-  proteinCut1 = '';
-  carbCut1 = '';
-  fatCut1 = '';
-  lossPWCut1 = '';
+  kcalCut2: string;
+  proteinCut2: string;
+  carbCut2: string;
+  fatCut2: string;
+  lossPWCut2: string;
 
-  kcalCut2 = '';
-  proteinCut2 = '';
-  carbCut2 = '';
-  fatCut2 = '';
-  lossPWCut2 = '';
+  kcalBulk1: string;
+  proteinBulk1: string;
+  carbBulk1: string;
+  fatBulk1: string;
+  gainPWBulk1: string;
 
-  kcalBulk1 = '';
-  proteinBulk1 = '';
-  carbBulk1 = '';
-  fatBulk1 = '';
-  gainPWBulk1 = '';
+  kcalBulk2: string;
+  proteinBulk2: string;
+  carbBulk2: string;
+  fatBulk2: string;
+  gainPWBulk2: string;
 
-  kcalBulk2 = '';
-  proteinBulk2 = '';
-  carbBulk2 = '';
-  fatBulk2 = '';
-  gainPWBulk2 = '';
-
-  kcalMaintain = '';
-  proteinMaintain = '';
-  carbMaintain = '';
-  fatMaintain = '';
+  kcalMaintain: string;
+  proteinMaintain: string;
+  carbMaintain: string;
+  fatMaintain: string;
 
   constructor() { }
 
@@ -85,23 +89,19 @@ export class MacroCalculatorComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.selectedValue = this.activities
+    .map(s => s.value).filter(s => s.toString() === '1').toString();
   }
 
-  reset() {
-    this.show = true;
-    this.iifymForm.reset();
-
-    this.onClear();
-  }
 
   onSubmit() {
-    this.show = false;
     this.goalVar = this.iifymForm.controls['goal'].value;
     this.genderVar = this.iifymForm.controls['gender'].value;
     this.activityVar = this.iifymForm.controls['activities'].value;
     this.heightVar = this.iifymForm.controls['height'].value;
     this.weightVar = this.iifymForm.controls['weight'].value;
     this.ageVar = this.iifymForm.controls['age'].value;
+    this.valueConverter();
 
     this.calcMacros();
 
@@ -302,48 +302,44 @@ export class MacroCalculatorComponent implements OnInit {
       this.gainPWBulk2 = s2;
   }
 
-  onClear() {
-    this.macroVar = 0;
-    this.goalVar = '';
-    this.genderVar = '';
-    this.activityVar = '';
-    this.weightVar = 0;
-    this.ageVar = 0;
-    this.heightVar = 0;
-    this.bmrVar = 0;
-    this.tdeeVar = 0;
-    this.proteinMultiplier = 0.9;
-    this.fatMultiplier = 0.35;
+  valueConverter() {
+    if (this.genderVar === '' && this.goalVar === '') {
+      this.genderVar = 'm';
+      this.goalVar = 'c';
+    }
+    if (this.genderVar === 'm') {
+      this.genderStore = 'Male';
+    } else if (this.genderVar === 'f') {
+      this.genderStore = 'Female';
+    }
 
-    this.kcalCut1 = '';
-    this.proteinCut1 = '';
-    this.carbCut1 = '';
-    this.fatCut1 = '';
-    this.lossPWCut1 = '';
+    // if (this.genderVar === 'm') {
+    //   this.genderStore = 'Male';
+    // } else if (this.genderVar === 'f') {
+    //   this.genderStore = 'Female';
+    // }
 
-    this.kcalCut2 = '';
-    this.proteinCut2 = '';
-    this.carbCut2 = '';
-    this.fatCut2 = '';
-    this.lossPWCut2 = '';
-
-    this.kcalBulk1 = '';
-    this.proteinBulk1 = '';
-    this.carbBulk1 = '';
-    this.fatBulk1 = '';
-    this.gainPWBulk1 = '';
-
-    this.kcalBulk2 = '';
-    this.proteinBulk2 = '';
-    this.carbBulk2 = '';
-    this.fatBulk2 = '';
-    this.gainPWBulk2 = '';
-
-    this.kcalMaintain = '';
-    this.proteinMaintain = '';
-    this.carbMaintain = '';
-    this.fatMaintain = '';
-
+    switch(this.activityVar) { 
+      case '1': { 
+         this.activityStore = 'Sedentary';
+         break; 
+      } 
+      case '2': { 
+        this.activityStore = 'Light Physical Activity';
+         break; 
+      } 
+      case "3": {
+        this.activityStore = 'Moderate Physical Activity';
+         break;    
+      } 
+      case "4": { 
+         this.activityStore = 'Vigorous Physical Activity';
+         break; 
+      }
+      default: {
+        this.activityStore ='Sedentary';
+      }  
+    }
   }
 
 }

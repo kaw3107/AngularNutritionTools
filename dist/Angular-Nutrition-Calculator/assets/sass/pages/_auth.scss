@@ -1,0 +1,10 @@
+@import "src/assets/sass/abstracts/_mixins.scss";
+@import "src/assets/sass/abstracts/_variables.scss";
+
+.auth-content-wrapper {
+        background-color: #ffffff;
+        height: 100vh;
+        @include for-tablet-landscape-up {
+          padding-left: 19rem !important;
+        }
+}

@@ -1,0 +1,360 @@
+@import "src/assets/sass/base/animations.scss";
+@import "src/assets/sass/abstracts/_mixins.scss";
+@import "src/assets/sass/abstracts/_variables.scss";
+
+.animate-pop-in {
+  animation: pop-in 0.6s cubic-bezier(0, 0.9, 0.3, 1.2) forwards;
+  opacity: 0;
+}
+
+.imgText{
+  height: 70px;
+  width: 125px;
+  @include for-phone-only {
+    height: 45px;
+    width: 100px;
+  }
+}
+.imgTextOversized1{
+  height: 40px;
+  width: 100px;
+  margin-left: 3rem;
+  @include for-phone-only {
+    height: 26px;
+    width: 100px;
+    margin: 0rem;
+  }
+}
+.imgTextOversized2{
+  height: 40px;
+  width: 80px;
+  margin-left: 3rem;
+  @include for-phone-only {
+    height: 26px;
+    width: 100px;
+    margin: 0rem;
+  }
+}
+.imgTextOversized3{
+  height: 70px;
+  width: 110px;
+  @include for-phone-only {
+    height: 45px;
+    width: 100px;
+  }
+}
+.home-content-wrapper {
+  background-color: #ffffff;
+  height: 100vh;
+  max-width:1200px;
+  @include for-tablet-landscape-up {
+    padding-left: 19rem !important;
+  }
+
+  .verticalAlign {
+    @include vertical-align();
+    .item-container {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      .item1 {
+        background-image: url("src/assets/images/home-menu-item1-bg.jpg");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        text-align: center;
+        color: $overlayTextBlend;
+        .opacity {
+          @include opacityOverlay;
+        }
+        .overlay {
+          @include itemBoxTextOverlay;
+        }
+        .item-link {
+          @include itemLinkBefore;
+        }
+        &:hover .overlay {
+          @include itemBoxTextOverlayHover;
+          .text {
+            @include itemBoxTextOverlayHoverText;
+            @include for-phone-only-landscape {
+              font-size: 1rem !important;
+            }
+            @include for-phone-only{
+              font-size: 1.2rem !important;
+            }
+            p {
+              @include itemTextSpacing;
+              p {
+                @include itemTextSpacing;
+              }
+            }
+            .item-link {
+              @include itemLinkAfter;
+              @include for-phone-only-landscape {
+                font-size: 1.2rem !important;
+              }
+            }
+          }
+        }
+      }
+      .item2 {
+        background-image: url("src/assets/images/home-menu-item2-bg.jpg");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        text-align: none;
+        color: $overlayTextBlend;
+        @include for-phone-only {
+          text-align: center;
+        }
+        .item2:hover {
+          background-color: red;
+        }
+        .opacity {
+          @include opacityOverlayOversize1;
+        }
+        .overlay {
+          @include itemBoxTextOverlay;
+        }
+        .item-link {
+          @include itemLinkBefore;
+        }
+        &:hover .overlay {
+          @include itemBoxTextOverlayHover;
+          .text {
+            @include itemBoxTextOverlayHoverText;
+            @include for-phone-only-landscape {
+              font-size: 1rem !important;
+            }
+            @include for-phone-only{
+              font-size: 1.2rem !important;
+            }
+            p {
+              @include itemTextSpacing;
+              p {
+                @include itemTextSpacing;
+              }
+            }
+            .item-link {
+              @include itemLinkAfter;
+              @include for-phone-only-landscape {
+                font-size: 1.2rem !important;
+              }
+            }
+          }
+        }
+      }
+      .item3 {
+        background-image: url("src/assets/images/home-menu-item3-bg.jpg");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        text-align: none;
+        color: $overlayTextBlend;
+        @include for-phone-only {
+          text-align: center;
+        }
+        .opacity {
+          @include opacityOverlayOversize1;
+        }
+        .overlay {
+          @include itemBoxTextOverlay;
+        }
+        .item-link {
+          @include itemLinkBefore;
+        }
+        &:hover .overlay {
+          @include itemBoxTextOverlayHover;
+          .text {
+            @include itemBoxTextOverlayHoverText;
+            @include for-phone-only-landscape {
+              font-size: 1rem !important;
+            }
+            @include for-phone-only{
+              font-size: 1.2rem !important;
+            }
+            p {
+              @include itemTextSpacing;
+              p {
+                @include itemTextSpacing;
+              }
+            }
+            .item-link {
+              @include itemLinkAfter;
+              @include for-phone-only-landscape {
+                font-size: 1.2rem !important;
+              }
+            }
+          }
+        }
+      }
+      .item4 {
+        background-image: url("src/assets/images/home-menu-item4-bg.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        text-align: center;
+        color: $overlayTextBlend;
+        .opacity {
+          @include opacityOverlay;
+        }
+        .overlay {
+          @include itemBoxTextOverlay;
+        }
+        .item-link {
+          @include itemLinkBefore;
+        }
+        &:hover .overlay {
+          @include itemBoxTextOverlayHover;
+          .text {
+            @include itemBoxTextOverlayHoverText;
+            @include for-phone-only-landscape {
+              font-size: 1rem !important;
+            }
+            @include for-phone-only{
+              font-size: 1.2rem !important;
+            }
+            p {
+              @include itemTextSpacing;
+              p {
+                @include itemTextSpacing;
+              }
+            }
+            .item-link {
+              @include itemLinkAfter;
+              @include for-phone-only-landscape {
+                font-size: 1.2rem !important;
+              }
+            }
+          }
+        }
+      }
+      .item5 {
+        background-image: url("src/assets/images/home-menu-item5-bg.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        text-align: center;
+        color: $overlayTextBlend;
+        .opacity {
+          @include opacityOverlay;
+        }
+        .overlay {
+          @include itemBoxTextOverlay;
+        }
+        .item-link {
+          @include itemLinkBefore;
+        }
+        &:hover .overlay {
+          @include itemBoxTextOverlayHover;
+          .text {
+            @include itemBoxTextOverlayHoverText;
+            @include for-phone-only-landscape {
+              font-size: 1rem !important;
+            }
+            @include for-phone-only{
+              font-size: 1.2rem !important;
+            }
+            p {
+              @include itemTextSpacing;
+              p {
+                @include itemTextSpacing;
+              }
+            }
+            .item-link {
+              @include itemLinkAfter;
+              @include for-phone-only-landscape {
+                font-size: 1.2rem !important;
+              }
+            }
+          }
+        }
+      }
+      .item6 {
+        background-image: url("src/assets/images/home-menu-item6-bg.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        text-align: center;
+        color: $overlayTextBlend;
+        .opacity {
+          @include opacityOverlay;
+        }
+        .overlay {
+          @include itemBoxTextOverlay;
+        }
+        .item-link {
+          @include itemLinkBefore;
+        }
+        &:hover .overlay {
+          @include itemBoxTextOverlayHover;
+          .text {
+            @include itemBoxTextOverlayHoverText;
+            @include for-phone-only-landscape {
+              font-size: 1rem !important;
+            }
+            p {
+              @include itemTextSpacing;
+              p {
+                @include itemTextSpacing;
+              }
+            }
+            .item-link {
+              @include itemLinkAfter;
+              @include for-phone-only-landscape {
+                font-size: 1.2rem !important;
+              }
+              @include for-phone-only{
+                font-size: 1.2rem !important;
+              }
+            }
+          }
+        }
+      }
+      .item7 {
+        background-image: url("src/assets/images/home-menu-item7-bg.jpg");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        text-align: center;
+        overflow: hidden;
+        color: $overlayTextBlend;
+        .opacity {
+          @include opacityOverlay;
+        }
+        .overlay {
+          @include itemBoxTextOverlay;
+        }
+        .item-link {
+          @include itemLinkBefore;
+        }
+        &:hover .overlay {
+          @include itemBoxTextOverlayHover;
+          .text {
+            @include itemBoxTextOverlayHoverText;
+            @include for-phone-only-landscape {
+              font-size: 1rem !important;
+            }
+            @include for-phone-only{
+              font-size: 1.2rem !important;
+            }
+            p {
+              @include itemTextSpacing;
+              p {
+                @include itemTextSpacing;
+              }
+            }
+            .item-link {
+              @include itemLinkAfter;
+              @include for-phone-only-landscape {
+                font-size: 1rem !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+

@@ -1,16 +1,20 @@
-import { ToolsStartComponent } from './../tools/tools-start/tools-start.component';
+
 import { MacroCalculatorComponent } from 'src/app/tools/macro-calculator/macro-calculator.component';
 import { CalorieCalculatorComponent } from './../tools/calorie-calculator/calorie-calculator.component';
 import { BMRCalculatorComponent } from 'src/app/tools/bmr-calculator/bmr-calculator.component';
 import { Routes, RouterModule } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
 import { AuthGuard } from './../auth/auth.guard';
+import { TdeeCalculatorComponent } from '../tools/tdee-calculator/tdee-calculator.component';
+import { CardioTrackingComponent } from 'src/app/tools/cardio-tracking/cardio-tracking.component';
+
 
 export const routes: Routes = [
-  { path: 'tools', component: ToolsStartComponent, canActivate: [AuthGuard]}, // default route of the module
-  { path: 'calories-calculator', component: CalorieCalculatorComponent, canActivate: [AuthGuard] },
-  { path: 'macro-calculator', component: MacroCalculatorComponent, canActivate: [AuthGuard] },
-  { path: 'bmr-calculator', component: BMRCalculatorComponent, canActivate: [AuthGuard]}
+  { path: 'calories-calculator', component: CalorieCalculatorComponent},
+  { path: 'macro-calculator', component: MacroCalculatorComponent},
+  { path: 'bmr-calculator', component: BMRCalculatorComponent},
+  { path: 'tdee-calculator', component: TdeeCalculatorComponent},
+  { path: 'cardio-tracker', component: CardioTrackingComponent },
 ];
 
 export const appRoutingProviders: any[] = [

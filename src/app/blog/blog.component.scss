@@ -1,12 +1,11 @@
 @import "src/assets/sass/components/_breadcrumbs.scss";
 @import "src/assets/sass/abstracts/_mixins.scss";
 
+
 .feedWrapper {
     display: inline-block !important;
     padding-top: 2rem;
     padding-left: 2.5rem;
     padding-right: 2.5rem;
-    @include for-tablet-landscape-up {
-        padding-left: 19rem !important;
-      }
+    background-color: black;
 }

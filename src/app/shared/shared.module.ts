@@ -1,4 +1,5 @@
-import { AppNavigationComponent } from './../app-navigation/app-navigation.component';
+
+// import { AppNavigationComponent } from './../app-navigation/app-navigation.component';
 import { TdeeCalculatorComponent } from './../tools/tdee-calculator/tdee-calculator.component';
 import { AuthGuard } from './../auth/auth.guard';
 import { NgModule } from '@angular/core';
@@ -9,10 +10,10 @@ import { routing } from './../routers/tools-routing.module';
 import { MaterialModule } from './../material.module';
 import { CalorieCalculatorComponent } from 'src/app/tools/calorie-calculator/calorie-calculator.component';
 import { MacroCalculatorComponent } from 'src/app/tools/macro-calculator/macro-calculator.component';
-import { ToolsStartComponent } from 'src/app/tools/tools-start/tools-start.component';
 import { BMRCalculatorComponent } from 'src/app/tools/bmr-calculator/bmr-calculator.component';
 import { ToolsModule } from '../tools/tools.module';
-
+import { CardioTrackingComponent } from '../tools/cardio-tracking/cardio-tracking.component';
+import { ListExercisesComponent } from './../tools/cardio-tracking/list-exercises/list-exercises.component';
 
 @NgModule({
   imports: [
@@ -20,26 +21,28 @@ import { ToolsModule } from '../tools/tools.module';
     routing,
     MaterialModule,
     ReactiveFormsModule,
-    ToolsModule
+    ToolsModule,
   ],
   exports : [
     CommonModule,
     FormsModule,
-    AppNavigationComponent,
+    // AppNavigationComponent,
     CalorieCalculatorComponent,
     MacroCalculatorComponent,
-    ToolsStartComponent,
     BMRCalculatorComponent,
-    TdeeCalculatorComponent
+    TdeeCalculatorComponent,
+    ListExercisesComponent,
   ],
   declarations: [
-    AppNavigationComponent,
+    // AppNavigationComponent,
     CalorieCalculatorComponent,
     MacroCalculatorComponent,
-    ToolsStartComponent,
     BMRCalculatorComponent,
-    TdeeCalculatorComponent
+    TdeeCalculatorComponent,
+    CardioTrackingComponent,
+    ListExercisesComponent,
    ],
+   entryComponents: [ListExercisesComponent],
    providers: [AuthService, AuthGuard],
 })
 export class SharedModule { }

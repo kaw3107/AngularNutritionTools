@@ -29,27 +29,37 @@ export class TdeeCalculatorComponent extends MacroCalculatorComponent implements
     { value: '4', viewValue: 'Vigorous Physical Activity' },
   ];
 
-  tdeeVar = 0;
-  goalVar = '';
-  genderVar = '';
-  activityVar = '';
-  weightVar = 0;
-  ageVar = 0;
-  heightVar = 0;
-  bmrVar = 0;
+  tdeeVar: number;
+  goalVar: string;
+  genderVar: string;
+  genderStore: string;
+  activityVar: string;
+  activityStore: string;
+  selectedValue: string;
+  selected: string;
+  weightVar: number;
+  ageVar: number;
+  heightVar: number;
+  bmrVar: number;
   constructor() {
     super();
    }
 
   ngOnInit() {
+    this.genderStore = 'Male';
+    this.selectedValue = this.activities
+    .map(s => s.value).filter(s => s.toString() === '1').toString();
   }
 
   onSubmit() {
+  
     this.genderVar = this.tdeeForm.controls['gender'].value;
     this.activityVar = this.tdeeForm.controls['activities'].value;
     this.heightVar = this.tdeeForm.controls['height'].value;
     this.weightVar = this.tdeeForm.controls['weight'].value;
     this.ageVar = this.tdeeForm.controls['age'].value;
+
+    this.valueConverter();
 
     super.setGender(this.genderVar);
     super.setAge(this.ageVar);
@@ -59,31 +69,38 @@ export class TdeeCalculatorComponent extends MacroCalculatorComponent implements
 
     // super.onSubmit();
     this.tdeeVar = super.onCallTdee();
-
-    this.showResult = true;
   }
 
-  reset() {
-    this.tdeeVar = 0;
-    this.goalVar = '';
-    this.genderVar = '';
-    this.activityVar = '';
-    this.weightVar = 0;
-    this.ageVar = 0;
-    this.heightVar = 0;
-    this.bmrVar = 0;
+  valueConverter() {
+    if (this.genderVar === '') {
+      this.genderVar = 'm'
+    }
+    if (this.genderVar === 'm') {
+      this.genderStore = 'Male';
+    } else if (this.genderVar === 'f') {
+      this.genderStore = 'Female';
+    }
 
-    super.setGender(this.genderVar);
-    super.setAge(this.ageVar);
-    super.setWeight(this.weightVar);
-    super.setHeight(this.heightVar);
-    super.setActivity(this.activityVar);
-
-    this.showResult = false;
-
-  }
-
-  onReturn() {
-    this.showResult = false;
+    switch(this.activityVar) { 
+      case '1': { 
+         this.activityStore = 'Sedentary';
+         break; 
+      } 
+      case '2': { 
+        this.activityStore = 'Light Physical Activity';
+         break; 
+      } 
+      case "3": {
+        this.activityStore = 'Moderate Physical Activity';
+         break;    
+      } 
+      case "4": { 
+         this.activityStore = 'Vigorous Physical Activity';
+         break; 
+      }
+      default: {
+        this.activityStore ='Sedentary';
+      }  
+    }
   }
 }

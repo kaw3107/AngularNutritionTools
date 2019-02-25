@@ -1,137 +1,100 @@
 <header class="app-home-header">
-  <div class="row home-content-wrapper animate-pop-in">
-    <div class="col-xs-12 col-md-11 col-md-centered col-lg-10 col-lg-push-1">
-      <div class="verticalAlign">
-        <!--Row 1 Start-->
-        <div class="row justify-content-center align-self-center menu-container">
-          <div class="col-xs-12 col-sm-4 item-container">
-            <div class="menu-grid-item item1">
-                <div class="overlay">
-                    <div class="text">
-                        <h2>My Account</h2>
-                      <p> Manage you're profile or </p>
-                      <p>create a new one</p>
-                      <br/>
-                      <a class="item-link" href="">Take me there</a>
-                    </div>
-                </div>
-              <div class="opacity">
-                <img class="imgTextOversized3" src="src/assets/images/home-menu-item1-bg.png">
-              </div>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-8 item-container">
-            <div class="menu-grid-item item2">
-                <div class="overlay">
-                    <div class="text">
-                        <h2>About</h2>
-                        <p>Before you get started why not find </p>
-                        <p>out a little bit more about us </p>
-                        <br/>
-                        <a class="item-link" href="">Take me there</a>
-                      </div>
-                </div>
-              <div class="opacity">
-                <img class="imgTextOversized1" src="src/assets/images/about-menu-item2.png">
-              </div>
-            </div>
-          </div>
-        </div>
-        <!--Row 1 End-->
 
-        <!--Row 2 Start-->
-        <div class="row justify-content-center align-self-center menu-container">
-          <div class="col-xs-12 col-sm-8 item-container">
-            <div class="menu-grid-item item3">
-                <div class="overlay">
-                    <div class="text">
-                        <h2>Blog</h2>
-                        <p>Get training and nutritional tips from</p>
-                        <p> Industry experts </p>
-                        <br/>
-                        <a class="item-link" routerLink="/blog">Take me there</a>
-                      </div>
-                </div>
-              <div class="opacity">
-                <img class="imgTextOversized2" src="src/assets/images/blog-menu-item3.png">
-              </div>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-4 item-container">
-            <div class="menu-grid-item item4">
-                <div class="overlay">
-                    <div class="text">
-                        <h2>TDEE Calculator</h2>
-                        <p>Find you're TDEE with our </p>
-                        <p> TDEE-Calculator </p>
-                        <br/>
-                        <a class="item-link" href="">Take me there</a>
-                      </div>
-                </div>
-              <div class="opacity">
-                <img class="imgText" src="src/assets/images/tdee-menu-item4.png">
-              </div>
-            </div>
-          </div>
-        </div>
-        <!--Row 2 End-->
+  <div class="app-home-header-img">
+    <div class="home-content-wrapper">
+      <div class="col-xs-12">
 
-        <!--Row 3 Start-->
-        <div class="row justify-content-center align-self-center menu-container">
-        <div class="col-xs-12 col-sm-4 item-container">
-          <div class="menu-grid-item item5">
-              <div class="overlay">
-                  <div class="text">
-                      <h2>BMR Calculator</h2>
-                      <p>Find you're BMR with our </p>
-                      <p> BMR-Calculator </p>
-                      <br/>
-                      <a class="item-link" href="">Take me there</a>
-                    </div>
-              </div>
-            <div class="opacity">
-              <img class="imgText" src="src/assets/images/bmr-menu-item5.png">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="heading-block">
+              <h1 class="row-header">
+                CALCULATORS
+              </h1>
             </div>
           </div>
         </div>
-        <div class="col-xs-12 col-sm-4 item-container">
-          <div class="menu-grid-item item6">
-              <div class="overlay">
-                  <div class="text">
-                      <h2>IIFYM Calculator</h2>
-                      <p>Calculate you're suggested macro</p>
-                      <p> intake with our IIFYM-Calculator </p>
-                      <br/>
-                      <a class="item-link" href="">Take me there</a>
-                    </div>
+        <div class="row content-container">
+          <div class="col-xs-12">
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-3">
+                <div class="element element-1">
+                  <h3>
+                    BMR Calculator
+                  </h3>
+                  <p class="element-content">
+                    The BMR refers to the number of calories your body
+                    burns while at rest to maintain vital functions like brain activity,
+                    heartbeat and digestion. This accounts for 50 to 75% of your daily caloric expenditure.
+                  </p>
+                  <span>
+                    <a routerLink="/bmr-calculator" class="button">
+                      Calculate
+                    </a>
+                  </span>
+                </div>
               </div>
-            <div class="opacity">
-              <img class="imgText" src="src/assets/images/iifym-menu-item6.png">
+              <div class="col-xs-12 col-sm-12 col-md-3">
+                <div class="element element-2">
+                  <h3>
+                    TDEE Calculator
+                  </h3>
+                  <p class="element-content">
+                    TDEE stands for ‘Total Daily Energy Expenditure’,
+                    which is the total number of calories your body is burning each day – and,
+                    by extension, the number of calories that you’d need to eat each day to maintain your current
+                    weight.
+                  </p>
+                  <span>
+                    <a class="button">
+                      Calculate
+                    </a>
+                  </span>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-3">
+                <div class="element element-3">
+                  <h3>
+                    IIFYM Calculator
+                  </h3>
+                  <p class="element-content">
+                    IIFYM, or “If It Fits Your Macros,” is a type of flexible dieting
+                    that helps people lose weight without feeling overly restricted. Rather than focusing on calories,
+                    IIFYM tracks macronutrients instead — namely protein, fat and carbohydrates.
+                  </p>
+                  <span>
+                    <a class="button">
+                      Calculate
+                    </a>
+                  </span>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-3">
+                <div class="element element-4">
+                  <h3>
+                    Macro to calories converter
+                  </h3>
+                  <p class="element-content">
+                    The Macro to calories converter, converts macronutrients into calories.
+                    This is useful when trying to workout a suitable macronutrient breakdown of calories.
+                  </p>
+                  <span>
+                    <a class="button">
+                      Calculate
+                    </a>
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-xs-12 col-sm-4 item-container">
-          <div class="menu-grid-item item7">
-              <div class="overlay">
-                  <div class="text">
-                    <h2>Calorie Calculator</h2>
-                      <p>Convert you're macro's to calories</p>
-                      <p>using our Macro-Converter </p>
 
-                      <br/>
-                      <a class="item-link" href="">Take me there</a>
-                    </div>
-              </div>
-            <div class="opacity">
-              <img class="imgText" src="src/assets/images/macro-menu-item7.png">
-            </div>
-          </div>
-        </div>
+
+
+
+
+
       </div>
-      <!--Row 3 End-->
-
     </div>
-  </div>
 
   </div>
 </header>

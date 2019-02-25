@@ -3,6 +3,7 @@ import { UserService } from './user-dashboard/user.service';
 import { AuthGuard } from './auth/auth.guard';
 import { routing } from './routers/app-routing.module';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { FeedService } from 'src/app/blog/feed.service';
 
 
@@ -31,9 +32,13 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
 import { UserProfileComponent } from './user-dashboard/user-profile/user-profile.component';
 import { SignUpDetailsComponent } from './auth/sign-up/sign-up-details/sign-up-details.component';
 import { FeedCardComponent } from './blog/feed-card/feed-card.component';
-import { CardioTrackerComponent } from './tracking-tools/cardio-tracker/cardio-tracker.component';
-import { TrackingToolsComponent } from './tracking-tools/tracking-tools.component';
-import { AuthHomeComponent } from 'src/app/auth/auth-home/auth-home.component';
+import { AuthDashboardComponent } from './auth/auth-dashboard/auth-dashboard.component';
+import { AppNavigationComponent } from './app-navigation/app-navigation.component';
+import { AddDialogComponent } from '../app/tools/cardio-tracking/dialogs/add.dialog/add.dialog.component';
+import { DeleteDialogComponent, } from '../app/tools/cardio-tracking/dialogs/delete.dialog/delete.dialog.component';
+import { EditDialogComponent } from '../app/tools/cardio-tracking/dialogs/edit.dialog/edit.dialog.component';
+import { ListExercisesComponent } from './tools/cardio-tracking/list-exercises/list-exercises.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,10 +52,13 @@ import { AuthHomeComponent } from 'src/app/auth/auth-home/auth-home.component';
     SignUpDetailsComponent,
     FeedCardComponent,
     StripHtmlTagsPipe,
-    CardioTrackerComponent,
-    TrackingToolsComponent,
     UserDashboardComponent,
-    AuthHomeComponent,
+    AuthDashboardComponent,
+    AppNavigationComponent,
+    AddDialogComponent,
+    DeleteDialogComponent,
+    EditDialogComponent,
+    // ListExercisesComponent
   ],
   imports: [
     // BrowserModule,
@@ -65,7 +73,9 @@ import { AuthHomeComponent } from 'src/app/auth/auth-home/auth-home.component';
     AngularFireDatabaseModule,
     SharedModule,
     HttpModule,
+    HttpClientModule
   ],
+  entryComponents: [ListExercisesComponent, AddDialogComponent, EditDialogComponent],
   providers: [AuthService, UserService, FeedService ],
   bootstrap: [AppComponent]
 })

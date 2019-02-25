@@ -2,7 +2,7 @@
 @import "src/assets/sass/abstracts/_variables.scss";
 
 .auth-content-wrapper {
-        background-color: #ffffff;
+        background-color: black !important;
         height: 100vh;
         @include for-tablet-landscape-up {
           padding-left: 19rem !important;

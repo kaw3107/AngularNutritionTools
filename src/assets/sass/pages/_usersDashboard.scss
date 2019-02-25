@@ -3,3 +3,12 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 @import "src/assets/sass/abstracts/_mixins.scss";
 @import "src/assets/sass/abstracts/_variables.scss";
+
+.auth-content-wrapper {
+    background-color: black;
+    height: 100vh;
+    color: white;
+    @include for-tablet-landscape-up {
+      padding-left: 19rem !important;
+    }
+}

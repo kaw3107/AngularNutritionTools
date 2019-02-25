@@ -1,0 +1,156 @@
+//Media query Mixins
+@mixin for-phone-only {
+  @media (max-width: 480px) { @content; }
+}
+@mixin for-phone-only-landscape {
+  @media (min-width: 481px) and (max-width: 767px) { @content; }
+}
+@mixin for-tablet-portrait-up {
+  @media (min-width: 768px) { @content; }
+}
+@mixin for-tablet-landscape-up {
+  @media (min-width: 900px) { @content; }
+}
+@mixin for-desktop-up {
+  @media (min-width: 1200px) { @content; }
+}
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) { @content; }
+}
+
+//Layout Mixins
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@mixin opacityOverlay{
+    background-color: rgba(11, 11, 11, 0.5);
+    height: 100%;
+    width: 100%;
+    padding: 3.5rem 0rem 3.5rem 0rem;
+    margin: 0 !important;
+}
+
+@mixin opacityOverlayOversize1{
+  background-color: rgba(11, 11, 11, 0.5);
+  height: 100%;
+  width: 100%;
+  padding: 5rem 0rem 5rem 0rem;
+  margin: 0 !important;
+}
+@mixin opacityOverlayOversize2{
+  background-color: rgba(11, 11, 11, 0.5);
+  height: 100%;
+  width: 100%;
+  padding: 5rem 0rem 5rem 0rem;
+  margin: 0 !important;
+}
+
+@mixin itemBoxTextOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 13px;
+  right: 0;
+  background-color: rgba(181, 12, 12, 1);
+  overflow: hidden;
+  width: 0;
+  height: calc(100% - 20px);
+  margin-bottom: 10px;
+  transition: .7s ease;
+}
+@mixin itemBoxTextOverlayHover {
+  width: calc(100% - 28px);
+}
+@mixin itemBoxTextOverlayHoverText {
+  color: white;
+  font-size: 1.3rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  white-space: nowrap ;
+  text-align: center;
+}
+
+@mixin itemLinkBefore {
+  color: $overlayTextBlend;
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+
+@mixin itemLinkAfter {
+  border: .2rem solid white;
+  padding: .5rem;
+  color:white;
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+
+@mixin itemTextSpacing {
+    margin-bottom: .2rem !important;
+  
+}
+
+
+
+//Bootstrap Mixins
+
+// Creates a wrapper for a series of columns
+@mixin make-row($gutters: $grid-gutter-widths) {
+  display: flex;
+  flex-wrap: wrap;
+
+  @each $breakpoint in map-keys($gutters) {
+    @include media-breakpoint-up($breakpoint) {
+      $gutter: map-get($gutters, $breakpoint);
+      margin-right: ($gutter / -2);
+      margin-left:  ($gutter / -2);
+    }
+  }
+}
+
+// Make the element grid-ready (applying everything but the width)
+@mixin make-col-ready($gutters: $grid-gutter-widths) {
+  position: relative;
+  // Prevent columns from becoming too narrow when at smaller grid tiers by
+  // always setting `width: 100%;`. This works because we use `flex` values
+  // later on to override this initial width.
+  width: 100%;
+  min-height: 1px; // Prevent collapsing
+
+  @each $breakpoint in map-keys($gutters) {
+    @include media-breakpoint-up($breakpoint) {
+      $gutter: map-get($gutters, $breakpoint);
+      padding-right: ($gutter / 2);
+      padding-left:  ($gutter / 2);
+    }
+  }
+}
+
+@mixin make-col($size, $columns: $grid-columns) {
+  flex: 0 0 percentage($size / $columns);
+  width: percentage($size / $columns);
+  // Add a `max-width` to ensure content within each column does not blow out
+  // the width of the column. Applies to IE10+ and Firefox. Chrome and Safari
+  // do not appear to require this.
+  max-width: percentage($size / $columns);
+}
+
+// Get fancy by offsetting, or changing the sort order
+@mixin make-col-offset($size, $columns: $grid-columns) {
+  margin-left: percentage($size / $columns);
+}
+
+@mixin make-col-push($size, $columns: $grid-columns) {
+  left: if($size > 0, percentage($size / $columns), auto);
+}
+
+@mixin make-col-pull($size, $columns: $grid-columns) {
+  right: if($size > 0, percentage($size / $columns), auto);
+}
